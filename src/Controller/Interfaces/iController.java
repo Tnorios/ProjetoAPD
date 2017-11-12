@@ -6,6 +6,7 @@
 package Controller.Interfaces;
 
 import Model.RegistroTransacao;
+import Model.Usuario;
 
 /**
  *
@@ -13,4 +14,5 @@ import Model.RegistroTransacao;
  */
 public interface iController {
     RegistroTransacao processar(RegistroTransacao r);
+    Usuario autenticar(String login, String senha);
 }

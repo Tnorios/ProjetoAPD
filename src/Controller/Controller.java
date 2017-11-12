@@ -8,6 +8,7 @@ package Controller;
 import Controller.Interfaces.iController;
 import Model.Lote;
 import Model.RegistroTransacao;
+import Model.Usuario;
 import Persistencia.DaoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,6 +24,7 @@ public class Controller implements iController {
     private String hostname;
     private int porta;
     private String banco;
+    private Usuario u;
 
     public Controller(String usuario, String senha, String hostname, int porta, String banco) {
         this.usuario = usuario;
@@ -32,7 +34,18 @@ public class Controller implements iController {
         this.banco = banco;
         lote = new Lote();
     }
-
+    
+    @Override
+    public Usuario autenticar(String login, String senha){
+        u = new Usuario(login,senha);
+        try {
+            u.autenticar(usuario, this.senha, hostname, porta, banco);
+        } catch (DaoException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return u;
+    }
+    
     @Override
     public RegistroTransacao processar(RegistroTransacao r){
         int id;

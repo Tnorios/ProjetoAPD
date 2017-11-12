@@ -23,4 +23,14 @@ public interface iDao {
     
     Object buscarPeloNumero(long id) throws DaoException;
 
+    public String getBanco(String login);
+
+    public String getSenha(String login);
+
+    public String getConta(String login);
+
+    public int getID(String login);
+
+    public String getNome(String login);
+
 }

@@ -26,6 +26,12 @@ public class TransacaoRelacional {
     private PreparedStatement stmApagar;
     private PreparedStatement stmAtualizar;
     private PreparedStatement stmObterConta;
+    private PreparedStatement stmGetConta;
+    private PreparedStatement stmGetSenha;
+    private PreparedStatement stmGetBanco;
+    private PreparedStatement stmGetID;
+    private PreparedStatement stmGetNome;
+    
     private iConexao conexao;
 
     public TransacaoRelacional(String usuario, String senha, String ip, int porta, String banco) throws DaoException {
@@ -44,6 +50,17 @@ public class TransacaoRelacional {
             stmAtualizar = connection.prepareStatement(sql);
             sql = "SELECT * FROM transferencia WHERE ID=? ";
             stmObterConta = connection.prepareStatement(sql);
+            sql = "SELECT senha FROM usuario WHERE login=? ";
+            stmGetSenha = connection.prepareStatement(sql);
+            sql = "SELECT conta FROM usuario WHERE login=? ";
+            stmGetConta = connection.prepareStatement(sql);
+            sql = "SELECT banco FROM usuario WHERE login=? ";
+            stmGetBanco = connection.prepareStatement(sql);
+            sql = "SELECT id FROM usuario WHERE login=? ";
+            stmGetID = connection.prepareStatement(sql);
+            sql = "SELECT nome FROM usuario WHERE login=? ";
+            stmGetNome = connection.prepareStatement(sql);
+            
         } catch (SQLException ex) {
             System.out.println("Erro sentença" + sql +" "+ ex.getMessage());
             throw new DaoException("Erro ao preparar sentença SQL: " + sql);
@@ -131,6 +148,86 @@ public class TransacaoRelacional {
             throw new DaoException("Erro ao executar a consulta dos dados");
         }
         return registro;
+    }
+
+    String getConta(String login) throws DaoException {
+        String res ="";
+        try {
+            stmGetConta.setString(1, login);
+            ResultSet resultados = stmGetConta.executeQuery();
+            if(resultados.next()){
+            res = resultados.getString("conta");
+            }else{return res;}
+        } catch (SQLException ex) {
+            System.out.println("Erro aqui "+ ex.getMessage());
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }finally{
+        return res;
+        }
+    }
+
+    int getID(String login) throws DaoException {
+        int res =0;
+        try {
+            stmGetID.setString(1, login);
+            ResultSet resultados = stmGetID.executeQuery();
+            if(resultados.next()){
+            res = resultados.getInt("id");
+            }else{return res;}
+        } catch (SQLException ex) {
+            System.out.println("Erro aqui 1"+ ex.getMessage());
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }finally{
+        return res;
+        }
+    }
+
+    String getNome(String login) throws DaoException {
+                String res ="";
+        try {
+            stmGetNome.setString(1, login);
+            ResultSet resultados = stmGetNome.executeQuery();
+            if(resultados.next()){
+            res = resultados.getString("nome");
+            }else{return res;}
+        } catch (SQLException ex) {
+            System.out.println("Erro aqui 2"+ ex.getMessage());
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }finally{
+        return res;
+        }
+    }
+
+    String getBanco(String login) throws DaoException {
+                String res ="";
+        try {
+            stmGetBanco.setString(1, login);
+            ResultSet resultados = stmGetBanco.executeQuery();
+            if(resultados.next()){
+            res = resultados.getString("Banco");
+            }else{return res;}
+        } catch (SQLException ex) {
+            System.out.println("Erro aqui "+ ex.getMessage());
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }finally{
+        return res;
+        }
+    }
+
+    String getSenha(String login) throws DaoException {
+        String res ="";
+        try {
+            stmGetSenha.setString(1, login);
+            ResultSet resultados = stmGetSenha.executeQuery();
+            if(resultados.next()){
+            res = resultados.getString("Senha");
+            }else{return res;}
+        } catch (SQLException ex) {
+            System.out.println("Erro aqui "+ ex.getMessage());
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }finally{
+        return res;
+        }
     }
     
 }

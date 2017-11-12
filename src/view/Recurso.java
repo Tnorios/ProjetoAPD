@@ -10,9 +10,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import Model.RegistroTransacao;
+import Model.Usuario;
+import javax.ws.rs.FormParam;
 
 
-@Path("/webservice")
+@Path("/ibanking")
 public class Recurso {
     private iController ctrl;
 
@@ -26,5 +28,16 @@ public class Recurso {
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response processar(RegistroTransacao r) {
         return Response.ok(ctrl.processar(r)).build();
+    }
+
+    @POST
+    @Path("/autenticar")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public Response autenticar(@FormParam("login") String login,@FormParam("senha") String senha) {
+        Usuario u = ctrl.autenticar(login, senha);
+        if(u.getNome().equals("Erro!")){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        return Response.ok(u).build();
     }
 }

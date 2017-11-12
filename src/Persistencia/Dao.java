@@ -7,6 +7,8 @@ package Persistencia;
 
 import Model.Interfaces.iDao;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,4 +49,55 @@ public class Dao implements iDao {
     public Object buscarPeloNumero(long id) throws DaoException {
         return tr.buscarPeloNumero(id);
     }    
+
+
+    @Override
+    public String getBanco(String login) {
+        try {
+            return tr.getBanco(login);
+        } catch (DaoException ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+
+    @Override
+    public String getSenha(String login) {
+        try {
+            return tr.getSenha(login);
+        } catch (DaoException ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+
+    @Override
+    public String getConta(String login) {
+        try {
+            return tr.getConta(login);
+        } catch (DaoException ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
+    }
+
+    @Override
+    public int getID(String login) {
+        try {
+            return tr.getID(login);
+        } catch (DaoException ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    @Override
+    public String getNome(String login) {
+        try {
+            return tr.getNome(login);
+        } catch (DaoException ex) {
+            Logger.getLogger(Dao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Erro!";
+    }
 }
