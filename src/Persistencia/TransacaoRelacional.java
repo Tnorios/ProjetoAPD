@@ -34,17 +34,18 @@ public class TransacaoRelacional {
         String sql = "";
 
         try {
-            sql = "SELECT ID estado data solvente acipiente  FROM transferencia ORDER BY ID";
+            sql = "SELECT * FROM transferencia ORDER BY ID";
             stmObterTodos = connection.prepareStatement(sql);
-            sql = "INSERT INTO transferencia VALUES (?,?,?,?,?,?,?,?)";
+            sql = "INSERT INTO transferencia (estado,valor,datat,acipiente,solvente,metodo,banco) VALUES(?,?,?,?,?,?,?)";
             stmInserir = connection.prepareStatement(sql);
             sql = "DELETE FROM transferencia WHERE ID=? ";
             stmApagar = connection.prepareStatement(sql);
             sql = "UPDATE transferencia SET estado=? WHERE ID=?";
             stmAtualizar = connection.prepareStatement(sql);
-            sql = "SELECT ID estado data solvente acipiente  FROM transferencia WHERE ID=? ";
+            sql = "SELECT * FROM transferencia WHERE ID=? ";
             stmObterConta = connection.prepareStatement(sql);
         } catch (SQLException ex) {
+            System.out.println("Erro sentença" + sql +" "+ ex.getMessage());
             throw new DaoException("Erro ao preparar sentença SQL: " + sql);
         }
     }
@@ -76,15 +77,15 @@ public class TransacaoRelacional {
         int ret = -1;
         try {
             stmInserir.setString(1, rt.getEstado()); // NUN SEI SE ISSO VAI FUNFAR
-            stmInserir.setInt(2, rt.getID());
-            stmInserir.setBigDecimal(3, rt.getValor());
-            stmInserir.setString(4, rt.getData());
-            stmInserir.setString(5, rt.getAcipiente());
-            stmInserir.setString(6, rt.getSolvente());
-            stmInserir.setString(7, rt.getMetodo());
-            stmInserir.setString(6, rt.getBanco());
+            stmInserir.setBigDecimal(2, rt.getValor());
+            stmInserir.setString(3, rt.getData());
+            stmInserir.setString(4, rt.getAcipiente());
+            stmInserir.setString(5, rt.getSolvente());
+            stmInserir.setString(6, rt.getMetodo());
+            stmInserir.setString(7, rt.getBanco());
             ret = stmInserir.executeUpdate();
         } catch (SQLException ex) {
+            System.out.println("Erro na insercao" + ex.getMessage());
             throw new DaoException("Erro na operação de inserir nova conta");
         }
     }

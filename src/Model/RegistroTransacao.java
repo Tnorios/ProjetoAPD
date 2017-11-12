@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class RegistroTransacao {
 
     private String estado;
+    @JsonIgnore
     private int ID;
     private BigDecimal valor;
     private String data;
@@ -53,7 +54,7 @@ public class RegistroTransacao {
     public int getID() {
         return ID;
     }
-
+    @JsonIgnore
     public void setID(int ID) {
         this.ID = ID;
     }
@@ -107,7 +108,7 @@ public class RegistroTransacao {
     }
 
 
-    public void conectar(String usuario, String senha, String hostname, int porta, String banco) {
+    public void conectar(String usuario, String senha, String hostname, int porta, String banco) throws DaoException {
         dao = new Dao(usuario, senha, hostname, porta, banco);
     }
 

@@ -22,11 +22,11 @@ public abstract class ServicoBanco {
     public RegistroTransacao fluxoDeProcessamento(RegistroTransacao r){
         conexao();
         envioDeDados(r);
-        //try {
-        //    r.persistir(r);
-        //} catch (DaoException ex) {
-        //    Logger.getLogger(ServicoBanco.class.getName()).log(Level.SEVERE, null, ex);
-        //}
+        try {
+            r.persistir(r);
+        } catch (DaoException ex) {
+            Logger.getLogger(ServicoBanco.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return r;
     }
 

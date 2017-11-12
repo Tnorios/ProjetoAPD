@@ -6,6 +6,7 @@
 package Model;
 
 import Model.Interfaces.iTransfere;
+import Persistencia.DaoException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Lote {
         gateway = Gateway.getInstance();
     }
 
-    public void setTransacao(RegistroTransacao rt,String usuario, String senha, String hostname, int porta, String banco) {
+    public void setTransacao(RegistroTransacao rt,String usuario, String senha, String hostname, int porta, String banco) throws DaoException {
         rt.conectar(usuario, senha, hostname, porta, banco);
         transacoes.add(rt);
     }
@@ -44,7 +45,7 @@ public class Lote {
         return validas;
     }
 
-    public int setTransacaoUnica(RegistroTransacao r, String usuario, String senha, String hostname, int porta, String banco) {
+    public int setTransacaoUnica(RegistroTransacao r, String usuario, String senha, String hostname, int porta, String banco) throws DaoException {
         r.conectar(usuario, senha, hostname, porta, banco);
         transacoes.add(r);
         return transacoes.indexOf(r);

@@ -8,6 +8,9 @@ package Controller;
 import Controller.Interfaces.iController;
 import Model.Lote;
 import Model.RegistroTransacao;
+import Persistencia.DaoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,7 +35,13 @@ public class Controller implements iController {
 
     @Override
     public RegistroTransacao processar(RegistroTransacao r){
-        int id = lote.setTransacaoUnica(r, usuario, senha, hostname, porta, banco);
-        return lote.transferir().get(id);
+        int id;
+        try {
+            id = lote.setTransacaoUnica(r, usuario, senha, hostname, porta, banco);
+            return lote.transferir().get(id);
+        } catch (DaoException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return r;
     }
 }
