@@ -101,7 +101,16 @@ public class TransacaoRelacional extends Estrategia {
     }
 
     @Override
-    public void atualizar(Object o) {
+    public void atualizar(Object o) throws DaoException{
+     int ret = -1;
+        try {
+            RegistroTransacao rt = (RegistroTransacao) o;
+            stmAtualizar.setString(1, rt.getEstado().getStatus());
+            stmAtualizar.setInt(2, rt.getID());
+            ret = stmAtualizar.executeUpdate();
+        } catch (SQLException ex) {
+            throw new DaoException("Erro ao preparar sentença SQL: " + stmAtualizar);
+        }
     }
 
     @Override
