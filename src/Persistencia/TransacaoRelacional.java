@@ -5,8 +5,6 @@
  */
 package Persistencia;
 
-import Model.Esperando;
-import Model.Estado;
 import Model.RegistroTransacao;
 import Persistencia.Interfaces.iConexao;
 import java.math.BigDecimal;
@@ -38,7 +36,7 @@ public class TransacaoRelacional {
         try {
             sql = "SELECT ID estado data solvente acipiente  FROM transferencia ORDER BY ID";
             stmObterTodos = connection.prepareStatement(sql);
-            sql = "INSERT INTO transferencia VALUES (?,?,?,?,?)";
+            sql = "INSERT INTO transferencia VALUES (?,?,?,?,?,?,?,?)";
             stmInserir = connection.prepareStatement(sql);
             sql = "DELETE FROM transferencia WHERE ID=? ";
             stmApagar = connection.prepareStatement(sql);
@@ -61,7 +59,10 @@ public class TransacaoRelacional {
                         resultados.getBigDecimal("valor"),
                         resultados.getString("data"),
                         resultados.getString("acipiente"),
-                        resultados.getString("solvente"));
+                        resultados.getString("solvente"),
+                        resultados.getString("metodo"),
+                        resultados.getString("banco"));
+                        
                 RegistroTransacao.add(c);
             }
         } catch (SQLException ex) {
@@ -74,12 +75,14 @@ public class TransacaoRelacional {
         RegistroTransacao rt = (RegistroTransacao) o;
         int ret = -1;
         try {
-            stmInserir.setString(1, rt.getEstado().getStatus()); // NUN SEI SE ISSO VAI FUNFAR
+            stmInserir.setString(1, rt.getEstado()); // NUN SEI SE ISSO VAI FUNFAR
             stmInserir.setInt(2, rt.getID());
             stmInserir.setBigDecimal(3, rt.getValor());
             stmInserir.setString(4, rt.getData());
             stmInserir.setString(5, rt.getAcipiente());
             stmInserir.setString(6, rt.getSolvente());
+            stmInserir.setString(7, rt.getMetodo());
+            stmInserir.setString(6, rt.getBanco());
             ret = stmInserir.executeUpdate();
         } catch (SQLException ex) {
             throw new DaoException("Erro na operação de inserir nova conta");
@@ -101,7 +104,7 @@ public class TransacaoRelacional {
         int ret = -1;
         try {
             RegistroTransacao rt = (RegistroTransacao) o;
-            stmAtualizar.setString(1, rt.getEstado().getStatus());
+            stmAtualizar.setString(1, rt.getEstado());
             stmAtualizar.setInt(2, rt.getID());
             ret = stmAtualizar.executeUpdate();
         } catch (SQLException ex) {
@@ -114,12 +117,14 @@ public class TransacaoRelacional {
         try {
             stmObterConta.setLong(1, id);
             ResultSet resultados = stmObterConta.executeQuery();
-            registro = new RegistroTransacao(resultados.getString("estado"),
+            RegistroTransacao c = new RegistroTransacao(resultados.getString("estado"),
                         resultados.getInt("ID"),
                         resultados.getBigDecimal("valor"),
                         resultados.getString("data"),
                         resultados.getString("acipiente"),
-                        resultados.getString("solvente"));
+                        resultados.getString("solvente"),
+                        resultados.getString("metodo"),
+                        resultados.getString("banco"));
             
         } catch (SQLException ex) {
             throw new DaoException("Erro ao executar a consulta dos dados");

@@ -22,6 +22,17 @@ public class RegistroTransacao {
     private iValida val;
     private String metodo;
     private String banco;
+
+    public RegistroTransacao(String estado, int ID, BigDecimal valor, String data, String acipiente, String solvente, String metodo, String banco) {
+        this.estado = estado;
+        this.ID = ID;
+        this.valor = valor;
+        this.data = data;
+        this.acipiente = acipiente;
+        this.solvente = solvente;
+        this.metodo = metodo;
+        this.banco = banco;
+    }
     
     public RegistroTransacao() {
     }
