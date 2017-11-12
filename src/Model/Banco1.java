@@ -17,7 +17,7 @@ public class Banco1 extends ServicoBanco{
     }
 
     @Override
-    public void envioDeDados(registroTransacao r) {
+    public void envioDeDados(RegistroTransacao r) {
         switch(r.getEstado().getMetodo()){
             case "Moeda Virtual":
                 r.setEstado(new Aceita());

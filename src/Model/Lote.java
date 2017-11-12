@@ -14,7 +14,7 @@ import java.util.List;
  * @author 31686559
  */
 public class Lote {
-    private List<registroTransacao> transacoes;
+    private List<RegistroTransacao> transacoes;
     private iTransfere gateway;
 
     public Lote() {
@@ -23,9 +23,9 @@ public class Lote {
     public void transferir(){
         gateway.transferir(validar());
     }
-    public List<registroTransacao> validar(){
-        List<registroTransacao> validas = new ArrayList<>();
-        for(registroTransacao r:transacoes){
+    public List<RegistroTransacao> validar(){
+        List<RegistroTransacao> validas = new ArrayList<>();
+        for(RegistroTransacao r:transacoes){
             if(r.validar()){
                 validas.add(r);
             }

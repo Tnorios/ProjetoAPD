@@ -5,7 +5,7 @@
  */
 package Model.Interfaces;
 
-import Model.registroTransacao;
+import Model.RegistroTransacao;
 import java.util.List;
 
 /**
@@ -14,6 +14,6 @@ import java.util.List;
  */
 public interface iTransfere {
 
-    public void transferir(List<registroTransacao> validar);
+    public void transferir(List<RegistroTransacao> validar);
     
 }

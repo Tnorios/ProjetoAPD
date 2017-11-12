@@ -12,6 +12,9 @@ package Model;
 public abstract class Estado {
     protected String status;
     protected String metodo;
+    
+    
+    
 
     public String getStatus() {
         return status;

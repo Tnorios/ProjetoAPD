@@ -15,12 +15,12 @@ public abstract class ServicoBanco {
     public String getStatus() {
         return status;
     }
-    public void fluxoDeProcessamento(registroTransacao r){
+    public void fluxoDeProcessamento(RegistroTransacao r){
         conexao();
         envioDeDados(r);
     }
 
     public abstract void conexao() ;
 
-    public abstract void envioDeDados(registroTransacao r);
+    public abstract void envioDeDados(RegistroTransacao r);
 }
