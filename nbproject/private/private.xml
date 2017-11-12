@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Controller/ControllerFactory.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Model/Recusada.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Controller/ModelFacade.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Persistencia/Interfaces/iConexao.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Controller/Interfaces/iController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Persistencia/Estrategia.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Model/Interfaces/iRegistroTransacao.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Model/RegistroTransacao.java</file>
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/ProjetoAPD/src/Model/Interfaces/iValida.java</file>
         </group>
     </open-files>
 </project-private>
