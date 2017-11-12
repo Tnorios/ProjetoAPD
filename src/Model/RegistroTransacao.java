@@ -6,11 +6,13 @@
 package Model;
 
 import java.math.BigDecimal;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Ellias Matheus
  */
+@XmlRootElement
 public class RegistroTransacao {
     private Estado estado;
     private int ID;

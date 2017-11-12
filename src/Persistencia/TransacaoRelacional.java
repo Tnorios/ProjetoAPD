@@ -5,11 +5,9 @@
  */
 package Persistencia;
 
-import Model.Conta;
 import Model.Esperando;
 import Model.Estado;
 import Model.RegistroTransacao;
-import Model.Usuario;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

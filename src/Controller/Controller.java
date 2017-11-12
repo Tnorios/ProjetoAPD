@@ -9,6 +9,8 @@ package Controller;
  *
  * @author 31686559
  */
-public abstract class Controller {
-    
+public class Controller {
+    public void processarTransacao(){
+        
+    }
 }
