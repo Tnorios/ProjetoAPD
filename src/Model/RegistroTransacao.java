@@ -98,5 +98,13 @@ public class RegistroTransacao {
     public Estado getEstado() {
         return estado; //To change body of generated methods, choose Tools | Templates.
     }
+
+    void conectar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void conectar(String usuario, String senha, String hostname, int porta, String banco) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

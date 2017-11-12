@@ -22,19 +22,9 @@ import Model.RegistroTransacao;
 @Path("/webservice")
 public class Recurso {
     private iController ctrl;
-    private String usuario;
-    private String senha;
-    private String hostname;
-    private int porta; 
-    private String banco;
 
     public Recurso(String usuario, String senha, String hostname, int porta, String banco) {
-        this.ctrl= new Controller();
-        this.usuario = usuario;
-        this.senha = senha;
-        this.hostname = hostname;
-        this.porta = porta;
-        this.banco = banco;
+        this.ctrl= new Controller(usuario, senha, hostname, porta, banco);
     }
 
     @POST
