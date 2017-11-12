@@ -8,6 +8,7 @@ package Persistencia;
 import Model.Esperando;
 import Model.Estado;
 import Model.RegistroTransacao;
+import Persistencia.Interfaces.iConexao;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,16 +21,17 @@ import java.util.List;
  *
  * @author 31686559
  */
-public class TransacaoRelacional extends Estrategia {
+public class TransacaoRelacional {
 
     private PreparedStatement stmObterTodos;
     private PreparedStatement stmInserir;
     private PreparedStatement stmApagar;
     private PreparedStatement stmAtualizar;
     private PreparedStatement stmObterConta;
-
+    private iConexao conexao;
+    
     public TransacaoRelacional(String usuario, String senha, String ip, int porta, String banco) throws DaoException {
-        super(usuario, senha, ip, porta, banco);
+        conexao = new ConexaoDerby(usuario, senha, ip, porta, banco);
         Connection connection = conexao.getConnection();
         String sql = "";
 
@@ -49,7 +51,7 @@ public class TransacaoRelacional extends Estrategia {
         }
     }
 
-    @Override
+
     public List<Object> listarTudo() throws DaoException {
         List<Object> RegistroTransacao = new ArrayList<>();
         try {
@@ -69,7 +71,7 @@ public class TransacaoRelacional extends Estrategia {
         return RegistroTransacao;
     }
 
-    @Override
+
     public void adicionar(Object o) throws DaoException {
         RegistroTransacao rt = (RegistroTransacao) o;
         int ret = -1;
@@ -86,7 +88,7 @@ public class TransacaoRelacional extends Estrategia {
         }
     }
 
-    @Override
+
     public void remover(Object o) throws DaoException {
       int ret = -1;
         RegistroTransacao rt = (RegistroTransacao) o;
@@ -98,7 +100,7 @@ public class TransacaoRelacional extends Estrategia {
         }
     }
 
-    @Override
+
     public void atualizar(Object o) throws DaoException{
      int ret = -1;
         try {
@@ -111,19 +113,8 @@ public class TransacaoRelacional extends Estrategia {
         }
     }
 
-    @Override
+
     public Object buscarPeloNumero(long id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public Object buscarPorString(String nome) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object buscarPorString(String agencia, String conta) throws DaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

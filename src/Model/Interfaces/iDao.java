@@ -22,9 +22,5 @@ public interface iDao {
     void atualizar(Object o) throws DaoException;
     
     Object buscarPeloNumero(long id) throws DaoException;
-    
-    Object buscarPorString(String nome) throws DaoException;
-    
-    Object buscarPorString(String agencia, String conta) throws DaoException;
 
 }

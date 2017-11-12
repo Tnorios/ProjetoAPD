@@ -13,19 +13,8 @@ import java.util.List;
  * @author 31686559
  */
 public abstract class Dao implements iDao {
-    private Estrategia tipoImplementacao;
+    private TransacaoRelacional tr;
 
-    public Dao(Estrategia tipoImplementacao) {
-        this.tipoImplementacao = tipoImplementacao;
-    }
-
-    public Estrategia getTipoImplementacao() {
-        return tipoImplementacao;
-    }
-
-    public void setTipoImplementacao(Estrategia tipoImplementacao) {
-        this.tipoImplementacao = tipoImplementacao;
-    }
 
     /**
      *
@@ -33,37 +22,26 @@ public abstract class Dao implements iDao {
      */
     @Override
     public List<Object> listarTudo() throws DaoException {
-        return tipoImplementacao.listarTudo() ;
+        return tr.listarTudo() ;
     }
     
     @Override
     public void adicionar(Object o) throws DaoException {
-        tipoImplementacao.adicionar(o);
+        tr.adicionar(o);
     }
     
     @Override
     public void remover(Object o) throws DaoException {
-        tipoImplementacao.remover(o);
+        tr.remover(o);
     }
     
     @Override
     public void atualizar(Object o) throws DaoException {
-        tipoImplementacao.atualizar(o);
+        tr.atualizar(o);
     }
     
     @Override
     public Object buscarPeloNumero(long id) throws DaoException {
-        return tipoImplementacao.buscarPeloNumero(id);
-    }
-    
-    @Override
-    public Object buscarPorString(String nome) throws DaoException {
-        return tipoImplementacao.buscarPorString(nome);
-    }
-    
-    @Override
-    public Object buscarPorString(String agencia, String conta) throws DaoException {
-        return tipoImplementacao.buscarPorString(agencia,conta);
-    }
-    
+        return tr.buscarPeloNumero(id);
+    }    
 }
