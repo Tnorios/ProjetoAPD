@@ -12,5 +12,5 @@ import Model.RegistroTransacao;
  * @author 31686559
  */
 public interface iController {
-    String processar(RegistroTransacao r);
+    RegistroTransacao processar(RegistroTransacao r);
 }

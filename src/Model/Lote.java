@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author 31686559
  */
+
 public class Lote {
 
     private List<RegistroTransacao> transacoes;
@@ -20,6 +21,7 @@ public class Lote {
 
     public Lote() {
         this.transacoes = new ArrayList<>();
+        gateway = Gateway.getInstance();
     }
 
     public void setTransacao(RegistroTransacao rt,String usuario, String senha, String hostname, int porta, String banco) {
@@ -35,11 +37,17 @@ public class Lote {
     public List<RegistroTransacao> validar() {
         List<RegistroTransacao> validas = new ArrayList<>();
         for (RegistroTransacao r : transacoes) {
-            if (r.validar()) {
+            if (r.validar(r)) {
                 validas.add(r);
             }
         }
         return validas;
+    }
+
+    public int setTransacaoUnica(RegistroTransacao r, String usuario, String senha, String hostname, int porta, String banco) {
+        r.conectar(usuario, senha, hostname, porta, banco);
+        transacoes.add(r);
+        return transacoes.indexOf(r);
     }
 
 }

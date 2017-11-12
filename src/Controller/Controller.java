@@ -31,8 +31,8 @@ public class Controller implements iController {
     }
 
     @Override
-    public String processar(RegistroTransacao r){
-        lote.setTransacao(r, usuario, senha, hostname, porta, banco);
-        return "Foi";
+    public RegistroTransacao processar(RegistroTransacao r){
+        int id = lote.setTransacaoUnica(r, usuario, senha, hostname, porta, banco);
+        return lote.transferir().get(id);
     }
 }

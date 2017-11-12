@@ -5,6 +5,7 @@ import Model.Interfaces.iDao;
 import Model.Interfaces.iValida;
 import Persistencia.Dao;
 import Persistencia.DaoException;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -18,7 +19,9 @@ public class RegistroTransacao {
     private String data;
     private String acipiente;
     private String solvente;
+    @JsonIgnore
     private iDao dao;
+    @JsonIgnore
     private iValida val;
     private String metodo;
     private String banco;
@@ -32,9 +35,11 @@ public class RegistroTransacao {
         this.solvente = solvente;
         this.metodo = metodo;
         this.banco = banco;
+        val = Gateway.getInstance();
     }
     
     public RegistroTransacao() {
+        val = Gateway.getInstance();
     }
 
     public String getEstado() {
@@ -85,22 +90,6 @@ public class RegistroTransacao {
         this.solvente = solvente;
     }
 
-    public iDao getDao() {
-        return dao;
-    }
-
-    public void setDao(iDao dao) {
-        this.dao = dao;
-    }
-
-    public iValida getVal() {
-        return val;
-    }
-
-    public void setVal(iValida val) {
-        this.val = val;
-    }
-
     public String getMetodo() {
         return metodo;
     }
@@ -122,12 +111,12 @@ public class RegistroTransacao {
         dao = new Dao(usuario, senha, hostname, porta, banco);
     }
 
-    public void persistir() throws DaoException {
-        dao.adicionar(this);
+    public void persistir(RegistroTransacao r) throws DaoException {
+        dao.adicionar(r);
     }
 
-    public boolean validar() {
-        return val.validar(this);
+    public boolean validar(RegistroTransacao r) {
+        return val.validar(r);
     }
 
 }
