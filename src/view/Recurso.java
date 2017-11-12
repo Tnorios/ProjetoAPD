@@ -5,6 +5,8 @@
  */
 package view;
 
+import Controller.Controller;
+import Controller.Interfaces.iController;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -19,13 +21,20 @@ import Model.RegistroTransacao;
  */
 @Path("/webservice")
 public class Recurso {
+    private iController ctrl;
+    private String usuario;
+    private String senha;
+    private String hostname;
+    private int porta; 
+    private String banco;
 
-    private String at1;
-    private String at2;
-
-    public Recurso(String at1, String at2) {
-        this.at1 = at1;
-        this.at2 = at2;
+    public Recurso(String usuario, String senha, String hostname, int porta, String banco) {
+        this.ctrl= new Controller();
+        this.usuario = usuario;
+        this.senha = senha;
+        this.hostname = hostname;
+        this.porta = porta;
+        this.banco = banco;
     }
 
     @POST
@@ -33,6 +42,6 @@ public class Recurso {
     @Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response processar(RegistroTransacao r) {
-        return Response.ok("{funcionou:tudo}").build();
+        return Response.ok(ctrl.processar(r)).build();
     }
 }

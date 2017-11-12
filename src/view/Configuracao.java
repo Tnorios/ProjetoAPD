@@ -12,26 +12,58 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author 31686559
  */
 public class Configuracao extends
-io.dropwizard.Configuration{
-@JsonProperty
-private String atributo1;
-@JsonProperty
-private String atributo2;
-/* getters e setters */
+        io.dropwizard.Configuration {
 
-    public String getAtributo1() {
-        return atributo1;
+    @JsonProperty
+    private String usuario;
+    @JsonProperty
+    private String senha;
+    @JsonProperty
+    private String hostname;
+    @JsonProperty
+    private int porta;
+    @JsonProperty
+    private String banco;
+
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setAtributo1(String atributo1) {
-        this.atributo1 = atributo1;
+    public String getSenha() {
+        return senha;
     }
 
-    public String getAtributo2() {
-        return atributo2;
+    public String getHostname() {
+        return hostname;
     }
 
-    public void setAtributo2(String atributo2) {
-        this.atributo2 = atributo2;
+    public int getPorta() {
+        return porta;
     }
+
+    public String getBanco() {
+        return banco;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public void setPorta(int porta) {
+        this.porta = porta;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
+    }
+
+
 }

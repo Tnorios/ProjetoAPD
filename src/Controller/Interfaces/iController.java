@@ -5,10 +5,12 @@
  */
 package Controller.Interfaces;
 
+import Model.RegistroTransacao;
+
 /**
  *
  * @author 31686559
  */
 public interface iController {
-    
+    String processar(RegistroTransacao r);
 }

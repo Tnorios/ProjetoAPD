@@ -5,12 +5,16 @@
  */
 package Controller;
 
+import Controller.Interfaces.iController;
+import Model.RegistroTransacao;
+
 /**
  *
  * @author 31686559
  */
-public class Controller {
-    public void processarTransacao(){
-        
+public class Controller implements iController {
+    @Override
+    public String processar(RegistroTransacao r){
+        return "Foi";
     }
 }

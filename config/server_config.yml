@@ -1,5 +1,8 @@
-atributo1: valor1
-atributo2: valor2
+usuario: app
+senha: app
+hostname: 127.0.0.1
+porta: 1527
+banco: sistema_bancario
 
 server:
   adminMinThreads: 1

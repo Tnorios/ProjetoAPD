@@ -16,7 +16,6 @@ public abstract class Estrategia implements iDao {
     protected final iConexao conexao;
     public Estrategia(String usuario,String senha,String ip,int porta,String banco) {
         conexao = new ConexaoDerby(usuario, senha, ip, porta, banco);
-        //conexao = new ConexaoDerby("app", "app", "127.0.0.1", 1527, "sistema_bancario");
     }
     
     @Override

@@ -12,17 +12,18 @@ import io.dropwizard.setup.Environment;
  *
  * @author 31686559
  */
-public class Aplicacao extends Application<Configuracao>{
-public static void main(String[] args)
-throws Exception {
-String[] param = {"server","config/server_config.yml"};
-new Aplicacao().run(param);
-}
-@Override
-public void run(Configuracao t, Environment e)
-throws Exception {
-final Recurso recurso = new Recurso(t.getAtributo1(),
-t.getAtributo2());
-e.jersey().register(recurso);
-}
+public class Aplicacao extends Application<Configuracao> {
+
+    public static void main(String[] args)
+            throws Exception {
+        String[] param = {"server", "config/server_config.yml"};
+        new Aplicacao().run(param);
+    }
+
+    @Override
+    public void run(Configuracao t, Environment e)
+            throws Exception {
+        final Recurso recurso = new Recurso(t.getUsuario(), t.getSenha(), t.getHostname(), t.getPorta(), t.getBanco());
+        e.jersey().register(recurso);
+    }
 }
