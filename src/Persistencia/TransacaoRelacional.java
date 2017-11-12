@@ -29,7 +29,7 @@ public class TransacaoRelacional {
     private PreparedStatement stmAtualizar;
     private PreparedStatement stmObterConta;
     private iConexao conexao;
-    
+
     public TransacaoRelacional(String usuario, String senha, String ip, int porta, String banco) throws DaoException {
         conexao = new ConexaoDerby(usuario, senha, ip, porta, banco);
         Connection connection = conexao.getConnection();
@@ -51,12 +51,11 @@ public class TransacaoRelacional {
         }
     }
 
-
     public List<Object> listarTudo() throws DaoException {
         List<Object> RegistroTransacao = new ArrayList<>();
         try {
             ResultSet resultados = stmObterTodos.executeQuery();
-            while (resultados.next()) {                
+            while (resultados.next()) {
                 RegistroTransacao c = new RegistroTransacao(resultados.getString("estado"),
                         resultados.getInt("ID"),
                         resultados.getBigDecimal("valor"),
@@ -70,7 +69,6 @@ public class TransacaoRelacional {
         }
         return RegistroTransacao;
     }
-
 
     public void adicionar(Object o) throws DaoException {
         RegistroTransacao rt = (RegistroTransacao) o;
@@ -88,9 +86,8 @@ public class TransacaoRelacional {
         }
     }
 
-
     public void remover(Object o) throws DaoException {
-      int ret = -1;
+        int ret = -1;
         RegistroTransacao rt = (RegistroTransacao) o;
         try {
             stmApagar.setInt(1, rt.getID());
@@ -100,9 +97,8 @@ public class TransacaoRelacional {
         }
     }
 
-
-    public void atualizar(Object o) throws DaoException{
-     int ret = -1;
+    public void atualizar(Object o) throws DaoException {
+        int ret = -1;
         try {
             RegistroTransacao rt = (RegistroTransacao) o;
             stmAtualizar.setString(1, rt.getEstado().getStatus());
@@ -113,8 +109,22 @@ public class TransacaoRelacional {
         }
     }
 
-
-    public Object buscarPeloNumero(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Object buscarPeloNumero(long id) throws DaoException{ 
+        RegistroTransacao registro = null;
+        try {
+            stmObterConta.setLong(1, id);
+            ResultSet resultados = stmObterConta.executeQuery();
+            registro = new RegistroTransacao(resultados.getString("estado"),
+                        resultados.getInt("ID"),
+                        resultados.getBigDecimal("valor"),
+                        resultados.getString("data"),
+                        resultados.getString("acipiente"),
+                        resultados.getString("solvente"));
+            
+        } catch (SQLException ex) {
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }
+        return registro;
     }
+    
 }
