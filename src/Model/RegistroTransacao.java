@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
 import Model.Interfaces.iDao;
@@ -12,10 +8,7 @@ import Persistencia.DaoException;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author Ellias Matheus
- */
+
 @XmlRootElement
 public class RegistroTransacao {
 
@@ -29,7 +22,6 @@ public class RegistroTransacao {
     private iValida val;
 
     public RegistroTransacao() {
-        estado=new Inicial();
     }
 
     public RegistroTransacao(String estado, int ID, BigDecimal valor, String data, String acipiente, String solvente) {
@@ -48,6 +40,10 @@ public class RegistroTransacao {
 
             case "Cancelada":
                 this.estado = new Cancelada();
+                break;
+            
+            case "Inicial":
+                this.estado = new Inicial();
                 break;
 
         }
@@ -98,39 +94,19 @@ public class RegistroTransacao {
         this.solvente = Pagante;
     }
 
-    public void setEstado(String estado) {
-        switch (estado) {
-            case "Esperando":
-                this.estado = new Esperando();
-                break;
 
-            case "Aceito":
-                this.estado = new Aceita();
-                break;
-
-            case "Recusada":
-                this.estado = new Recusada();
-                break;
-
-            case "Cancelada":
-                this.estado = new Cancelada();
-                break;
-
-        }
-
+    public void setEstado(Estado estado){
+            this.estado = estado;
     }
 
     boolean validar() {
         return val.validar(this);
     }
 
-    public Estado pegaEstado() {
-        return estado; //To change body of generated methods, choose Tools | Templates.
+    public Estado getEstado() {
+        return estado;
     }
     
-    public String getEstado(){
-        return estado.getStatus();
-    }
 
     void conectar(String usuario, String senha, String hostname, int porta, String banco) {
         dao = new Dao(usuario, senha, hostname, porta, banco);

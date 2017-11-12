@@ -18,21 +18,26 @@ public class Banco2 extends ServicoBanco{
 
     @Override
     public void envioDeDados(RegistroTransacao r) {
-        switch(r.pegaEstado().getMetodo()){
+        switch(r.getEstado().getMetodo()){
             case "Moeda Virtual":
-                r.setEstado("Recusada");
+                //r.setEstado("Recusada");
+                r.setEstado(new Recusada());
             break;
             case "Transferencia":
-                r.setEstado("Aceita");
+                //r.setEstado("Aceita");
+                r.setEstado(new Aceita());
             break;
             case "Debito":
-                r.setEstado("Recusada");
+                //r.setEstado("Recusada");
+                r.setEstado(new Recusada());
             break;
             case "Credito":
-                r.setEstado("Aceita");
+                //r.setEstado("Aceita");
+                r.setEstado(new Aceita());
             break;
             case "Boleto":
-                r.setEstado("Aceita");
+                //r.setEstado("Aceita");
+                r.setEstado(new Aceita());
             break;
         }
     }

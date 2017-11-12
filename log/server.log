@@ -1951,3 +1951,259 @@ INFO   [02:21:49.391] [Thread-11] o.e.j.s.AbstractConnector -  Stopped applicati
 INFO   [02:21:49.394] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
 INFO   [02:21:49.398] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
 INFO   [02:21:49.405] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [12:47:59.083] [main] o.e.j.u.log -  Logging initialized @6957ms 
+INFO   [12:47:59.434] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [12:47:59.434] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [12:47:59.513] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [12:47:59.513] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [12:47:59.518] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [12:48:00.212] [main] o.e.j.s.SetUIDListener -  Opened application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [12:48:00.213] [main] o.e.j.s.SetUIDListener -  Opened admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [12:48:00.220] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [12:48:02.455] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [12:48:02.468] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@7dff6d05{/,null,AVAILABLE} 
+INFO   [12:48:02.503] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [12:48:02.505] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [12:48:02.531] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@d74bac4{/,null,AVAILABLE} 
+INFO   [12:48:03.077] [main] o.e.j.s.AbstractConnector -  Started application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [12:48:03.088] [main] o.e.j.s.AbstractConnector -  Started admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [12:48:03.089] [main] o.e.j.s.Server -  Started @10966ms 
+INFO   [13:04:50.347] [main] o.e.j.u.log -  Logging initialized @5326ms 
+INFO   [13:04:50.670] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:04:50.670] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:04:50.690] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:04:50.690] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:04:50.695] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:04:51.285] [main] o.e.j.s.SetUIDListener -  Opened application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:04:51.287] [main] o.e.j.s.SetUIDListener -  Opened admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:04:51.293] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:04:53.109] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:04:53.118] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@7dff6d05{/,null,AVAILABLE} 
+INFO   [13:04:53.133] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:04:53.134] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:04:53.154] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@d74bac4{/,null,AVAILABLE} 
+INFO   [13:04:53.752] [main] o.e.j.s.AbstractConnector -  Started application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:04:53.769] [main] o.e.j.s.AbstractConnector -  Started admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:04:53.769] [main] o.e.j.s.Server -  Started @8751ms 
+INFO   [13:06:59.134] [main] o.e.j.u.log -  Logging initialized @5240ms 
+INFO   [13:06:59.498] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:06:59.499] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:06:59.523] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:06:59.523] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:06:59.529] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:07:00.235] [main] o.e.j.s.SetUIDListener -  Opened application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:07:00.236] [main] o.e.j.s.SetUIDListener -  Opened admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:07:00.243] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:07:02.109] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:07:02.119] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@7dff6d05{/,null,AVAILABLE} 
+INFO   [13:07:02.139] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:07:02.141] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:07:02.161] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@d74bac4{/,null,AVAILABLE} 
+INFO   [13:07:02.579] [main] o.e.j.s.AbstractConnector -  Started application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:07:02.591] [main] o.e.j.s.AbstractConnector -  Started admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:07:02.592] [main] o.e.j.s.Server -  Started @8702ms 
+INFO   [13:13:05.927] [main] o.e.j.u.log -  Logging initialized @6533ms 
+INFO   [13:13:06.283] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:13:06.284] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:13:06.319] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:13:06.319] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:13:06.325] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:13:07.014] [main] o.e.j.s.SetUIDListener -  Opened application@1c5c616f{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:13:07.015] [main] o.e.j.s.SetUIDListener -  Opened admin@1c6c6f24{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:13:07.022] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:13:10.067] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:13:10.077] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@250b5e5b{/,null,AVAILABLE} 
+INFO   [13:13:10.103] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:13:10.105] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:13:10.127] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@1200458e{/,null,AVAILABLE} 
+INFO   [13:13:10.539] [main] o.e.j.s.AbstractConnector -  Started application@1c5c616f{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:13:10.549] [main] o.e.j.s.AbstractConnector -  Started admin@1c6c6f24{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:13:10.550] [main] o.e.j.s.Server -  Started @11160ms 
+INFO   [13:14:09.472] [main] o.e.j.u.log -  Logging initialized @6248ms 
+INFO   [13:14:09.891] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:14:09.891] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:14:24.722] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:14:24.722] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:14:24.758] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:14:26.227] [main] o.e.j.s.SetUIDListener -  Opened application@3fbcfe81{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:14:26.231] [main] o.e.j.s.SetUIDListener -  Opened admin@7a1f45ed{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:14:26.249] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:14:35.003] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:14:35.021] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@250b5e5b{/,null,AVAILABLE} 
+INFO   [13:14:35.103] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:14:35.108] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:14:35.186] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@1200458e{/,null,AVAILABLE} 
+INFO   [13:14:35.602] [main] o.e.j.s.AbstractConnector -  Started application@3fbcfe81{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:14:35.630] [main] o.e.j.s.AbstractConnector -  Started admin@7a1f45ed{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:14:35.632] [main] o.e.j.s.Server -  Started @32411ms 
+INFO   [13:20:22.450] [main] o.e.j.u.log -  Logging initialized @6130ms 
+INFO   [13:20:23.059] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:20:23.060] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:20:23.127] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:20:23.129] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:20:23.139] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:20:23.827] [main] o.e.j.s.SetUIDListener -  Opened application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:20:23.829] [main] o.e.j.s.SetUIDListener -  Opened admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:20:23.836] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:20:25.722] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:20:25.734] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@7dff6d05{/,null,AVAILABLE} 
+INFO   [13:20:25.770] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:20:25.772] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:20:25.804] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@d74bac4{/,null,AVAILABLE} 
+INFO   [13:20:26.823] [main] o.e.j.s.AbstractConnector -  Started application@62d363ab{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:20:26.835] [main] o.e.j.s.AbstractConnector -  Started admin@7889a1ac{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:20:26.836] [main] o.e.j.s.Server -  Started @10519ms 
+INFO   [13:26:52.983] [main] o.e.j.u.log -  Logging initialized @7048ms 
+INFO   [13:26:53.309] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:26:53.310] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:26:53.333] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:26:53.335] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:26:53.341] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:26:54.019] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:26:54.022] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:26:54.041] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:26:56.395] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:26:56.407] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@4d6ee47{/,null,AVAILABLE} 
+INFO   [13:26:56.432] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:26:56.434] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:26:56.464] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2c768ada{/,null,AVAILABLE} 
+INFO   [13:26:57.141] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:26:57.160] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:26:57.161] [main] o.e.j.s.Server -  Started @11233ms 
+INFO   [13:34:52.539] [main] o.e.j.u.log -  Logging initialized @7118ms 
+INFO   [13:34:52.902] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:34:52.903] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:34:52.939] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [13:34:52.940] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [13:34:52.947] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [13:34:53.655] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:34:53.658] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:34:53.679] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [13:34:55.633] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [13:34:55.650] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@4d6ee47{/,null,AVAILABLE} 
+INFO   [13:34:55.683] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [13:34:55.685] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [13:34:55.709] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2c768ada{/,null,AVAILABLE} 
+INFO   [13:34:56.292] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [13:34:56.315] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [13:34:56.316] [main] o.e.j.s.Server -  Started @10903ms 

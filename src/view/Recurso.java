@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 
 import Controller.Controller;
@@ -15,10 +11,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import Model.RegistroTransacao;
 
-/**
- *
- * @author 31686559
- */
+
 @Path("/webservice")
 public class Recurso {
     private iController ctrl;
@@ -32,6 +25,6 @@ public class Recurso {
     @Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response processar(RegistroTransacao r) {
-        return Response.ok("{foi:tudo}").build();
+        return Response.ok("{\"foi\":\"tudo\"}").build();
     }
 }

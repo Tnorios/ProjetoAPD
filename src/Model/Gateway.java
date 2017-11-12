@@ -32,7 +32,7 @@ public class Gateway implements iValida, iTransfere {
 
     private ProcessadorDePagamentos delegar(RegistroTransacao rt) {
         ProcessadorDePagamentos p = null;
-        switch (rt.pegaEstado().getMetodo()) {
+        switch (rt.getEstado().getMetodo()) {
             case "Moeda Virtual":
                 p = new MoedaVirtual();
                 break;

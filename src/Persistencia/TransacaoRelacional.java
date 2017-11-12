@@ -74,7 +74,7 @@ public class TransacaoRelacional {
         RegistroTransacao rt = (RegistroTransacao) o;
         int ret = -1;
         try {
-            stmInserir.setString(1, rt.pegaEstado().getStatus()); // NUN SEI SE ISSO VAI FUNFAR
+            stmInserir.setString(1, rt.getEstado().getStatus()); // NUN SEI SE ISSO VAI FUNFAR
             stmInserir.setInt(2, rt.getID());
             stmInserir.setBigDecimal(3, rt.getValor());
             stmInserir.setString(4, rt.getData());
@@ -101,7 +101,7 @@ public class TransacaoRelacional {
         int ret = -1;
         try {
             RegistroTransacao rt = (RegistroTransacao) o;
-            stmAtualizar.setString(1, rt.pegaEstado().getStatus());
+            stmAtualizar.setString(1, rt.getEstado().getStatus());
             stmAtualizar.setInt(2, rt.getID());
             ret = stmAtualizar.executeUpdate();
         } catch (SQLException ex) {

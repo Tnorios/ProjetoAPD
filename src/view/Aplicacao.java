@@ -6,6 +6,7 @@
 package view;
 
 import io.dropwizard.Application;
+import io.dropwizard.jersey.jackson.JsonProcessingExceptionMapper;
 import io.dropwizard.setup.Environment;
 
 /**
@@ -25,5 +26,6 @@ public class Aplicacao extends Application<Configuracao> {
             throws Exception {
         final Recurso recurso = new Recurso(t.getUsuario(), t.getSenha(), t.getHostname(), t.getPorta(), t.getBanco());
         e.jersey().register(recurso);
+        e.jersey().register(new JsonProcessingExceptionMapper(true));
     }
 }
