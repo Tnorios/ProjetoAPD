@@ -27,8 +27,9 @@ public class Lote {
         transacoes.add(rt);
     }
 
-    public void transferir() {
+    public List<RegistroTransacao> transferir() {
         gateway.transferir(validar());
+        return transacoes;
     }
 
     public List<RegistroTransacao> validar() {

@@ -1,22 +1,27 @@
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:54:44 +0000] "GET /pargarws/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 161
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:54:44 +0000] "GET /favicon.ico HTTP/1.1" 404 43 "http://localhost:7000/pargarws/ws" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:56:09 +0000] "GET /pargar HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 101
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:56:14 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:56:27 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 9
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:04 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 112
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:04 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 3
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:05 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 3
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:05 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:05 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:17 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:18 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:18:57:19 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 3
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:09 +0000] "GET /pagar/ws HTTP/1.1" 200 16 "-" "curl/7.55.1" 0
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:22 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 4
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:24 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 3
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:25 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:26 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 8
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:34 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:35 +0000] "GET /pargar/ws HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 2
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:00:50 +0000] "GET /pagar/ws HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 6
-0:0:0:0:0:0:0:1 - - [10/nov/2017:19:10:49 +0000] "GET /pagar/ws HTTP/1.1" 200 16 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36" 85
+0:0:0:0:0:0:0:1 - - [12/nov/2017:03:31:09 +0000] "POST /recurso/byObject HTTP/1.1" 404 43 "-" "curl/7.49.0" 296
+0:0:0:0:0:0:0:1 - - [12/nov/2017:03:32:16 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 316
+0:0:0:0:0:0:0:1 - - [12/nov/2017:03:33:57 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 303
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:00:49 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 258
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:01:02 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 4
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:15 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 100
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:24 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:25 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:26 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:26 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:02:26 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:12 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 104
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:14 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:23 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:41 +0000] "GET /webervice/pagar HTTP/1.1" 404 43 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36" 52
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:43 +0000] "GET /favicon.ico HTTP/1.1" 404 43 "http://localhost:7000/webervice/pagar" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:04:48 +0000] "GET /webservice/pagar HTTP/1.1" 405 52 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:07:24 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 211
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:07:54 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:49 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 114
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:50 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:51 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:51 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 3
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:51 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:09:51 +0000] "POST /webservice/pagar HTTP/1.1" 500 0 "-" "curl/7.49.0" 2
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:16:28 +0000] "POST /webservice/pagar HTTP/1.1" 400 47 "-" "curl/7.49.0" 128
+0:0:0:0:0:0:0:1 - - [12/nov/2017:04:20:51 +0000] "POST /webservice/pagar HTTP/1.1" 400 47 "-" "curl/7.49.0" 130

@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class RegistroTransacao {
+
     private Estado estado;
     private int ID;
     private BigDecimal valor;
@@ -27,24 +28,28 @@ public class RegistroTransacao {
     private iDao dao;
     private iValida val;
 
+    public RegistroTransacao() {
+        estado=new Inicial();
+    }
+
     public RegistroTransacao(String estado, int ID, BigDecimal valor, String data, String acipiente, String solvente) {
-        switch(estado){
+        switch (estado) {
             case "Esperando":
-                this.estado=new Esperando();
-            break;
-            
+                this.estado = new Esperando();
+                break;
+
             case "Aceito":
-                this.estado=new Aceita();
-            break;
-            
+                this.estado = new Aceita();
+                break;
+
             case "Recusada":
-                this.estado=new Recusada();
-            break;
-            
+                this.estado = new Recusada();
+                break;
+
             case "Cancelada":
-                this.estado=new Cancelada();
-            break;
-            
+                this.estado = new Cancelada();
+                break;
+
         }
         this.ID = ID;
         this.valor = valor;
@@ -93,24 +98,46 @@ public class RegistroTransacao {
         this.solvente = Pagante;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-        
+    public void setEstado(String estado) {
+        switch (estado) {
+            case "Esperando":
+                this.estado = new Esperando();
+                break;
+
+            case "Aceito":
+                this.estado = new Aceita();
+                break;
+
+            case "Recusada":
+                this.estado = new Recusada();
+                break;
+
+            case "Cancelada":
+                this.estado = new Cancelada();
+                break;
+
+        }
+
     }
+
     boolean validar() {
         return val.validar(this);
     }
 
-    public Estado getEstado() {
+    public Estado pegaEstado() {
         return estado; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public String getEstado(){
+        return estado.getStatus();
     }
 
     void conectar(String usuario, String senha, String hostname, int porta, String banco) {
-        dao= new Dao(usuario, senha, hostname, porta, banco);
+        dao = new Dao(usuario, senha, hostname, porta, banco);
     }
 
     void persistir() throws DaoException {
         dao.adicionar(this);
     }
-    
+
 }

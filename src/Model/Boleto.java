@@ -5,10 +5,17 @@
  */
 package Model;
 
+import Model.Interfaces.ProcessadorDePagamentos;
+
 /**
  *
  * @author 31686559
  */
-public class Boleto {
+public class Boleto extends  ProcessadorDePagamentos {
+
+    @Override
+    public boolean valida(RegistroTransacao rt) {
+        return true;
+    }
     
 }

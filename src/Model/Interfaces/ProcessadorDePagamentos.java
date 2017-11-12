@@ -6,14 +6,18 @@
 package Model.Interfaces;
 
 import Model.RegistroTransacao;
-import java.util.List;
+import Model.ServicoBanco;
 
 /**
  *
  * @author 31686559
  */
-public interface iTransfere {
-
-    public List<RegistroTransacao> transferir(List<RegistroTransacao> validar);
+public abstract class ProcessadorDePagamentos {
+    protected ServicoBanco s;
+    public abstract boolean valida (RegistroTransacao rt); 
+    public RegistroTransacao transferir (RegistroTransacao rt){
+      return s.fluxoDeProcessamento(rt);
+    }
+    
     
 }

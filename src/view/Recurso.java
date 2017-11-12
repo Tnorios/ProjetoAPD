@@ -32,6 +32,6 @@ public class Recurso {
     @Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response processar(RegistroTransacao r) {
-        return Response.ok(ctrl.processar(r)).build();
+        return Response.ok("{foi:tudo}").build();
     }
 }

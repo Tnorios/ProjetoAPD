@@ -1,23 +1,45 @@
-INFO   [16:54:20.344] [main] o.e.j.u.log -  Logging initialized @1551ms 
-INFO   [16:54:20.453] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:54:20.453] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:54:20.453] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:54:20.453] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:54:20.469] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [16:54:20.641] [main] o.e.j.s.SetUIDListener -  Opened application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:54:20.641] [main] o.e.j.s.SetUIDListener -  Opened admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:54:20.641] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [16:54:21.219] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+INFO   [01:24:11.116] [main] o.e.j.u.log -  Logging initialized @11259ms 
+INFO   [01:24:11.701] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [01:24:11.701] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [01:24:11.743] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [01:24:11.743] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [01:24:11.743] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [01:24:11.779] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [01:24:11.779] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [01:24:13.462] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:24:13.462] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:24:13.465] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+ERROR  [01:24:13.538] [main] i.d.c.ServerCommand -  Unable to start server, shutting down 
+java.lang.RuntimeException: java.net.BindException: Address already in use
+	at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:188)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:67)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+	at io.dropwizard.cli.Cli.run(Cli.java:75)
+	at io.dropwizard.Application.run(Application.java:79)
+	at view.Aplicacao.main(Aplicacao.java:20)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:317)
+	at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200)
+	... 8 common frames omitted
+INFO   [01:24:23.119] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
 
-    GET     /pagarws/ws (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
  
-INFO   [16:54:21.219] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@479f2dc2{/,null,AVAILABLE} 
-INFO   [16:54:21.234] [main] i.d.s.AdminEnvironment -  tasks = 
+INFO   [01:24:23.196] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@162b3d47{/,null,AVAILABLE} 
+INFO   [01:24:23.240] [main] i.d.s.AdminEnvironment -  tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
  
-WARN   [16:54:21.234] [main] i.d.s.AdminEnvironment -  
+WARN   [01:24:23.241] [main] i.d.s.AdminEnvironment -  
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -26,30 +48,109 @@ WARN   [16:54:21.234] [main] i.d.s.AdminEnvironment -
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [16:54:21.234] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@8b91134{/,null,AVAILABLE} 
-INFO   [16:54:26.333] [main] o.e.j.s.AbstractConnector -  Started application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:54:26.335] [main] o.e.j.s.AbstractConnector -  Started admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:54:26.335] [main] o.e.j.s.Server -  Started @7531ms 
-INFO   [16:55:13.651] [main] o.e.j.u.log -  Logging initialized @1541ms 
-INFO   [16:55:13.760] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:55:13.760] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:55:13.760] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:55:13.760] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:55:13.760] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [16:55:13.948] [main] o.e.j.s.SetUIDListener -  Opened application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:55:13.948] [main] o.e.j.s.SetUIDListener -  Opened admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:55:13.948] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [16:55:14.511] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+INFO   [01:24:23.248] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@6ab4ba9f{/,null,AVAILABLE} 
+INFO   [01:24:23.556] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:24:23.557] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:24:23.557] [main] o.e.j.s.Server -  Started @23730ms 
+ERROR  [01:32:16.573] [dw-19 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@2ab9571b; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [01:33:09.159] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:33:09.162] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:33:09.290] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@6ab4ba9f{/,null,UNAVAILABLE} 
+INFO   [01:33:09.301] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@162b3d47{/,null,UNAVAILABLE} 
+INFO   [01:33:27.891] [main] o.e.j.u.log -  Logging initialized @3728ms 
+INFO   [01:33:28.201] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [01:33:28.201] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [01:33:28.251] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [01:33:28.251] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [01:33:28.253] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [01:33:28.621] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:33:28.622] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:33:28.624] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [01:33:29.571] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
 
-    GET     /pagar/ws (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
  
-INFO   [16:55:14.511] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@479f2dc2{/,null,AVAILABLE} 
-INFO   [16:55:14.527] [main] i.d.s.AdminEnvironment -  tasks = 
+INFO   [01:33:29.575] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [01:33:29.616] [main] i.d.s.AdminEnvironment -  tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
  
-WARN   [16:55:14.527] [main] i.d.s.AdminEnvironment -  
+WARN   [01:33:29.617] [main] i.d.s.AdminEnvironment -  
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -58,30 +159,109 @@ WARN   [16:55:14.527] [main] i.d.s.AdminEnvironment -
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [16:55:14.527] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@8b91134{/,null,AVAILABLE} 
-INFO   [16:55:19.606] [main] o.e.j.s.AbstractConnector -  Started application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:55:19.606] [main] o.e.j.s.AbstractConnector -  Started admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:55:19.606] [main] o.e.j.s.Server -  Started @7504ms 
-INFO   [16:56:58.224] [main] o.e.j.u.log -  Logging initialized @1523ms 
-INFO   [16:56:58.333] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:56:58.333] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:56:58.333] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [16:56:58.333] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [16:56:58.333] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [16:56:58.515] [main] o.e.j.s.SetUIDListener -  Opened application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:56:58.515] [main] o.e.j.s.SetUIDListener -  Opened admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:56:58.515] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [16:56:59.093] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+INFO   [01:33:29.623] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [01:33:29.765] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:33:29.767] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:33:29.768] [main] o.e.j.s.Server -  Started @5612ms 
+ERROR  [01:33:57.336] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@35d37e14; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [01:37:08.365] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [01:37:08.374] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [01:37:08.376] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [01:37:08.390] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:00:46.296] [main] o.e.j.u.log -  Logging initialized @4389ms 
+INFO   [02:00:46.527] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:00:46.527] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:00:46.594] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:00:46.594] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:00:46.619] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:00:46.888] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:00:46.888] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:00:46.891] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:00:47.729] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
 
-    GET     /pagar/ws (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
  
-INFO   [16:56:59.109] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@479f2dc2{/,null,AVAILABLE} 
-INFO   [16:56:59.109] [main] i.d.s.AdminEnvironment -  tasks = 
+INFO   [02:00:47.732] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:00:47.740] [main] i.d.s.AdminEnvironment -  tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
  
-WARN   [16:56:59.109] [main] i.d.s.AdminEnvironment -  
+WARN   [02:00:47.741] [main] i.d.s.AdminEnvironment -  
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -90,30 +270,184 @@ WARN   [16:56:59.109] [main] i.d.s.AdminEnvironment -
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [16:56:59.124] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@8b91134{/,null,AVAILABLE} 
-INFO   [16:57:04.160] [main] o.e.j.s.AbstractConnector -  Started application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [16:57:04.163] [main] o.e.j.s.AbstractConnector -  Started admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [16:57:04.163] [main] o.e.j.s.Server -  Started @7463ms 
-INFO   [17:10:34.692] [main] o.e.j.u.log -  Logging initialized @1551ms 
-INFO   [17:10:34.817] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [17:10:34.817] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [17:10:34.817] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [17:10:34.817] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [17:10:34.817] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [17:10:35.004] [main] o.e.j.s.SetUIDListener -  Opened application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [17:10:35.004] [main] o.e.j.s.SetUIDListener -  Opened admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [17:10:35.004] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [17:10:35.629] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+INFO   [02:00:47.746] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:00:47.790] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:00:47.793] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:00:47.793] [main] o.e.j.s.Server -  Started @5889ms 
+ERROR  [02:00:49.768] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@54231dec; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:01:02.149] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@6d30ece8; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [02:01:41.167] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:01:41.168] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:01:41.229] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:01:41.237] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:02:08.123] [main] o.e.j.u.log -  Logging initialized @2153ms 
+INFO   [02:02:08.239] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:02:08.240] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:02:08.245] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:02:08.245] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:02:08.247] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:02:08.466] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:02:08.467] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:02:08.469] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:02:09.416] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
 
-    GET     /pagar/ws (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
  
-INFO   [17:10:35.629] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@479f2dc2{/,null,AVAILABLE} 
-INFO   [17:10:35.645] [main] i.d.s.AdminEnvironment -  tasks = 
+INFO   [02:02:09.424] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:02:09.433] [main] i.d.s.AdminEnvironment -  tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
  
-WARN   [17:10:35.645] [main] i.d.s.AdminEnvironment -  
+WARN   [02:02:09.433] [main] i.d.s.AdminEnvironment -  
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -122,7 +456,1498 @@ WARN   [17:10:35.645] [main] i.d.s.AdminEnvironment -
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [17:10:35.645] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@8b91134{/,null,AVAILABLE} 
-INFO   [17:10:40.762] [main] o.e.j.s.AbstractConnector -  Started application@466cf502{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [17:10:40.762] [main] o.e.j.s.AbstractConnector -  Started admin@5b800468{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [17:10:40.762] [main] o.e.j.s.Server -  Started @7627ms 
+INFO   [02:02:09.444] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:02:09.478] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:02:09.482] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:02:09.482] [main] o.e.j.s.Server -  Started @3514ms 
+ERROR  [02:02:15.114] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@5620f32b; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:02:24.234] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@237343d2; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:02:25.900] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@794cf0c4; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:02:26.249] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@309329c1; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:02:26.519] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@5035636e; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:02:26.779] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@69e1d769; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [02:03:49.026] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:03:49.041] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:03:49.045] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:03:49.068] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:04:04.264] [main] o.e.j.u.log -  Logging initialized @1936ms 
+INFO   [02:04:04.358] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:04:04.358] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:04:04.362] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:04:04.362] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:04:04.364] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:04:04.562] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:04:04.563] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:04:04.565] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:04:05.296] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [02:04:05.302] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:04:05.309] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [02:04:05.309] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [02:04:05.319] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:04:05.334] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:04:05.335] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:04:05.336] [main] o.e.j.s.Server -  Started @3010ms 
+ERROR  [02:04:12.820] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@1d880355; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:04:14.901] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@4e53ff54; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:04:23.560] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@58445772; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [02:05:10.839] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:05:10.841] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:05:10.842] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:05:10.848] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:07:19.604] [main] o.e.j.u.log -  Logging initialized @3789ms 
+INFO   [02:07:19.841] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:07:19.841] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:07:19.893] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:07:19.893] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:07:19.895] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:07:20.231] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:07:20.232] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:07:20.235] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:07:21.122] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [02:07:21.133] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:07:21.167] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [02:07:21.168] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [02:07:21.174] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:07:21.303] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:07:21.303] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:07:21.303] [main] o.e.j.s.Server -  Started @5497ms 
+ERROR  [02:07:24.917] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@407bf0a5; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:07:54.411] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.RegistroTransacao]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@48b4e423; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [02:09:14.546] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:09:14.549] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:09:14.551] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:09:14.568] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:09:42.530] [main] o.e.j.u.log -  Logging initialized @2077ms 
+INFO   [02:09:42.653] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:09:42.653] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:09:42.687] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:09:42.687] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:09:42.690] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:09:42.900] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:09:42.901] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:09:42.904] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:09:43.641] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [02:09:43.644] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:09:43.654] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [02:09:43.654] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [02:09:43.666] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:09:43.679] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:09:43.682] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:09:43.683] [main] o.e.j.s.Server -  Started @3231ms 
+ERROR  [02:09:49.648] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@2f134ce2; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:09:50.760] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@1a0e3f25; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:09:51.052] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@124bd48e; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:09:51.266] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@6031c644; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:09:51.469] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@42337114; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [02:09:51.638] [dw-18 - POST /webservice/pagar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of Model.Estado, problem: abstract types either need to be mapped to concrete types, have custom deserializer, or be instantiated with additional type information
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@292f9960; line: 1, column: 11] (through reference chain: Model.RegistroTransacao["estado"])
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.DeserializationContext.instantiationException(DeserializationContext.java:1007)
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:150)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:490)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [02:16:03.647] [main] o.e.j.u.log -  Logging initialized @2430ms 
+INFO   [02:16:03.749] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:16:03.750] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:16:03.756] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:16:03.756] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:16:03.758] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+ERROR  [02:16:03.967] [main] i.d.c.ServerCommand -  Unable to start server, shutting down 
+java.lang.RuntimeException: java.net.BindException: Address already in use
+	at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:213)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.setStarting(AbstractLifeCycle.java:188)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:67)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+	at io.dropwizard.cli.Cli.run(Cli.java:75)
+	at io.dropwizard.Application.run(Application.java:79)
+	at view.Aplicacao.main(Aplicacao.java:20)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:317)
+	at org.eclipse.jetty.setuid.SetUIDListener.lifeCycleStarting(SetUIDListener.java:200)
+	... 8 common frames omitted
+INFO   [02:16:14.922] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:16:14.926] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:16:14.930] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:16:14.945] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:16:22.591] [main] o.e.j.u.log -  Logging initialized @1861ms 
+INFO   [02:16:22.700] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:16:22.700] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:16:22.748] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:16:22.749] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:16:22.750] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:16:22.963] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:16:22.963] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:16:22.965] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:16:23.745] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [02:16:23.755] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:16:23.771] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [02:16:23.776] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [02:16:23.795] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:16:23.835] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:16:23.838] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:16:23.839] [main] o.e.j.s.Server -  Started @3110ms 
+INFO   [02:20:00.384] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:20:00.392] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:20:00.402] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:20:00.420] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 
+INFO   [02:20:43.197] [main] o.e.j.u.log -  Logging initialized @1997ms 
+INFO   [02:20:43.310] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:20:43.310] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:20:43.317] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [02:20:43.317] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [02:20:43.319] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [02:20:43.515] [main] o.e.j.s.SetUIDListener -  Opened application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:20:43.516] [main] o.e.j.s.SetUIDListener -  Opened admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:20:43.519] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [02:20:44.205] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [02:20:44.208] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@783115d9{/,null,AVAILABLE} 
+INFO   [02:20:44.215] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [02:20:44.216] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [02:20:44.223] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@27ace0b1{/,null,AVAILABLE} 
+INFO   [02:20:44.245] [main] o.e.j.s.AbstractConnector -  Started application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:20:44.249] [main] o.e.j.s.AbstractConnector -  Started admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:20:44.249] [main] o.e.j.s.Server -  Started @3051ms 
+INFO   [02:21:49.391] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@bc57b40{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [02:21:49.394] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@1b5bc39d{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [02:21:49.398] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@27ace0b1{/,null,UNAVAILABLE} 
+INFO   [02:21:49.405] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@783115d9{/,null,UNAVAILABLE} 

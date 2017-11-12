@@ -19,7 +19,7 @@ public abstract class ServicoBanco {
     public String getStatus() {
         return status;
     }
-    public void fluxoDeProcessamento(RegistroTransacao r){
+    public RegistroTransacao fluxoDeProcessamento(RegistroTransacao r){
         conexao();
         envioDeDados(r);
         try {
@@ -27,6 +27,7 @@ public abstract class ServicoBanco {
         } catch (DaoException ex) {
             Logger.getLogger(ServicoBanco.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return r;
     }
 
     public abstract void conexao() ;
