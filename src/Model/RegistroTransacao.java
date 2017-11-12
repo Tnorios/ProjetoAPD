@@ -5,6 +5,10 @@
  */
 package Model;
 
+import Model.Interfaces.iDao;
+import Model.Interfaces.iValida;
+import Persistencia.Dao;
+import Persistencia.DaoException;
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -20,6 +24,8 @@ public class RegistroTransacao {
     private String data;
     private String acipiente;
     private String solvente;
+    private iDao dao;
+    private iValida val;
 
     public RegistroTransacao(String estado, int ID, BigDecimal valor, String data, String acipiente, String solvente) {
         switch(estado){
@@ -92,19 +98,19 @@ public class RegistroTransacao {
         
     }
     boolean validar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return val.validar(this);
     }
 
     public Estado getEstado() {
         return estado; //To change body of generated methods, choose Tools | Templates.
     }
 
-    void conectar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void conectar(String usuario, String senha, String hostname, int porta, String banco) {
+        dao= new Dao(usuario, senha, hostname, porta, banco);
     }
 
-    void conectar(String usuario, String senha, String hostname, int porta, String banco) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void persistir() throws DaoException {
+        dao.adicionar(this);
     }
     
 }

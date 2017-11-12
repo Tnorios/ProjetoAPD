@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package Model.Interfaces;
-
+import Model.RegistroTransacao;
 /**
  *
  * @author 31686559
  */
 public interface iValida {
-    
+    boolean validar(RegistroTransacao rt);
 }

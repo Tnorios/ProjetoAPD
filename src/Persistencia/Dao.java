@@ -12,9 +12,21 @@ import java.util.List;
  *
  * @author 31686559
  */
-public abstract class Dao implements iDao {
+public class Dao implements iDao {
     private TransacaoRelacional tr;
+    private String usuario;
+    private String senha;
+    private String hostname;
+    private int porta;
+    private String banco;
 
+    public Dao(String usuario, String senha, String hostname, int porta, String banco) {
+        this.usuario = usuario;
+        this.senha = senha;
+        this.hostname = hostname;
+        this.porta = porta;
+        this.banco = banco;
+    }
 
     /**
      *

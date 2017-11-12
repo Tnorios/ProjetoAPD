@@ -5,6 +5,10 @@
  */
 package Model;
 
+import Persistencia.DaoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author 31686559
@@ -18,6 +22,11 @@ public abstract class ServicoBanco {
     public void fluxoDeProcessamento(RegistroTransacao r){
         conexao();
         envioDeDados(r);
+        try {
+            r.persistir();
+        } catch (DaoException ex) {
+            Logger.getLogger(ServicoBanco.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public abstract void conexao() ;
