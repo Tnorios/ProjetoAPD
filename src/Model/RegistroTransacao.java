@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class RegistroTransacao {
 
-    private Estado estado;
+    private String estado;
     private int ID;
     private BigDecimal valor;
     private String data;
@@ -20,38 +20,18 @@ public class RegistroTransacao {
     private String solvente;
     private iDao dao;
     private iValida val;
-
+    private String metodo;
+    private String banco;
+    
     public RegistroTransacao() {
     }
 
-    public RegistroTransacao(String estado, int ID, BigDecimal valor, String data, String acipiente, String solvente) {
-        switch (estado) {
-            case "Esperando":
-                this.estado = new Esperando();
-                break;
+    public String getEstado() {
+        return estado;
+    }
 
-            case "Aceito":
-                this.estado = new Aceita();
-                break;
-
-            case "Recusada":
-                this.estado = new Recusada();
-                break;
-
-            case "Cancelada":
-                this.estado = new Cancelada();
-                break;
-            
-            case "Inicial":
-                this.estado = new Inicial();
-                break;
-
-        }
-        this.ID = ID;
-        this.valor = valor;
-        this.data = data;
-        this.acipiente = acipiente;
-        this.solvente = solvente;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public int getID() {
@@ -82,38 +62,61 @@ public class RegistroTransacao {
         return acipiente;
     }
 
-    public void setAcipiente(String receptor) {
-        this.acipiente = receptor;
+    public void setAcipiente(String acipiente) {
+        this.acipiente = acipiente;
     }
 
     public String getSolvente() {
         return solvente;
     }
 
-    public void setSolvente(String Pagante) {
-        this.solvente = Pagante;
+    public void setSolvente(String solvente) {
+        this.solvente = solvente;
+    }
+
+    public iDao getDao() {
+        return dao;
+    }
+
+    public void setDao(iDao dao) {
+        this.dao = dao;
+    }
+
+    public iValida getVal() {
+        return val;
+    }
+
+    public void setVal(iValida val) {
+        this.val = val;
+    }
+
+    public String getMetodo() {
+        return metodo;
+    }
+
+    public void setMetodo(String metodo) {
+        this.metodo = metodo;
+    }
+
+    public String getBanco() {
+        return banco;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
     }
 
 
-    public void setEstado(Estado estado){
-            this.estado = estado;
-    }
-
-    boolean validar() {
-        return val.validar(this);
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-    
-
-    void conectar(String usuario, String senha, String hostname, int porta, String banco) {
+    public void conectar(String usuario, String senha, String hostname, int porta, String banco) {
         dao = new Dao(usuario, senha, hostname, porta, banco);
     }
 
-    void persistir() throws DaoException {
+    public void persistir() throws DaoException {
         dao.adicionar(this);
+    }
+
+    public boolean validar() {
+        return val.validar(this);
     }
 
 }

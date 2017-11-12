@@ -32,21 +32,21 @@ public class Gateway implements iValida, iTransfere {
 
     private ProcessadorDePagamentos delegar(RegistroTransacao rt) {
         ProcessadorDePagamentos p = null;
-        switch (rt.getEstado().getMetodo()) {
+        switch (rt.getMetodo()) {
             case "Moeda Virtual":
-                p = new MoedaVirtual();
+                p = new MoedaVirtual(rt.getBanco());
                 break;
             case "Transferencia":
-                p = new Transferencia();
+                p = new Transferencia(rt.getBanco());
                 break;
             case "Debito":
-                p = new Debito();
+                p = new Debito(rt.getBanco());
                 break;
             case "Credito":
-                p = new Credito();
+                p = new Credito(rt.getBanco());
                 break;
             case "Boleto":
-                p = new Boleto();
+                p = new Boleto(rt.getBanco());
                 break;
 
         }

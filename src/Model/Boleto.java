@@ -13,6 +13,10 @@ import Model.Interfaces.ProcessadorDePagamentos;
  */
 public class Boleto extends  ProcessadorDePagamentos {
 
+    public Boleto(String banco) {
+        super(banco);
+    }
+
     @Override
     public boolean valida(RegistroTransacao rt) {
         return true;

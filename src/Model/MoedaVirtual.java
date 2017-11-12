@@ -13,6 +13,10 @@ import Model.Interfaces.ProcessadorDePagamentos;
  */
 public class MoedaVirtual extends  ProcessadorDePagamentos  {
 
+    public MoedaVirtual(String banco) {
+        super(banco);
+    }
+
     @Override
     public boolean valida(RegistroTransacao rt) {
         return true;

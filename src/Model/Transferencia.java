@@ -14,6 +14,10 @@ import Model.Interfaces.ProcessadorDePagamentos;
  */
 public class Transferencia extends  ProcessadorDePagamentos {
 
+    public Transferencia(String banco) {
+        super(banco);
+    }
+
     @Override
     public boolean valida(RegistroTransacao rt) {
         return true;
