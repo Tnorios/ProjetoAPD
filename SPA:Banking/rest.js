@@ -37,6 +37,7 @@ function acessar(){
         },
         error: function(data){
             console.log('Error: ' + data);
+            document.getElementById("erro").innerHTML = "Login ou senha incorreta";
         }
     });
 }
@@ -105,9 +106,9 @@ function menu(response){
     html += "<input id='data' name='data' type='hidden' value='"+ day + "/" + month + "/" + year +"'/>";
     html += "<label>Acipiente:</label><input id='acipiente' name='acipiente' type='text' />";
     html += "<label>valor:</label><input id='valor' name='valor' type='text' />";
-    html += "<label>Meio de pagamento:</label><input id='metodo' name='metodo' type='text' />";
-    html +=  "<button id='btnPagar'>Entrar</button></form>";
-    html +=  "<form><button id='btnListar'>Listar transações</button>";
+    html += "<label>Meio de pagamento:</label><input id='metodo' name='metodo' type='text' /><br>";
+    html +=  "<button id='btnPagar'>Pagar</button></form>";
+    html +=  "<form><button id='btnListar'>Listar atividades</button>";
     html += "<input id='login' name='login' type='hidden' value='"+response.login+"'/>";
     html += "<input id='senha' name='senha' type='hidden' value='"+response.senha+"'/></form>";
     html+="<div id='Script'></div>";
@@ -119,7 +120,7 @@ function menu(response){
 
 function tabela(response){
     var html = "<table border='1|1'>";
-    html+="<tr><th>Acipiente</th><th>Solvente</th><th>Banco</th><th>Método</th><th>Valor</th><th>Data</th></tr>";
+    html+="<tr><th>Acipiente</th><th>Solvente</th><th>Banco</th><th>Metodo</th><th>Valor</th><th>Data</th><th>Estado</th></tr>";
     for (var i = 0; i < response.length; i++) {
     html+="<tr>";
     html+="<td>"+response[i].acipiente+"</td>";
@@ -128,6 +129,7 @@ function tabela(response){
     html+="<td>"+response[i].metodo+"</td>";
     html+="<td>"+response[i].valor+"</td>";
     html+="<td>"+response[i].data+"</td>";
+    html+="<td>"+response[i].estado+"</td>";
     html+="</tr>";
     }
     html+="</table>";

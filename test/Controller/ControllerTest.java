@@ -31,7 +31,7 @@ public class ControllerTest {
      */
     @Test
     public void testListar() {
-        String login = "admin";
+        String login = "666";
         String senha = "admin";
         Controller instance = null;
         instance = new Controller("app", "app", "127.0.0.1", 1527, "sistema_bancario");
@@ -45,7 +45,7 @@ public class ControllerTest {
      */
     @Test
     public void testAutenticar() {
-        String login = "admin";
+        String login = "666";
         String senha = "admin";
         Controller instance = null;
         instance = new Controller("app", "app", "127.0.0.1", 1527, "sistema_bancario");
