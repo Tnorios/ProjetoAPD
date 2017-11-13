@@ -236,12 +236,14 @@ public class TransacaoRelacional {
     List<RegistroTransacao> buscarPorString(String s) throws DaoException {
         List<RegistroTransacao> RegistroTransacao = new ArrayList<>();
         try {
+            stmObterTrans.setString(1, s);
+            stmObterTrans.setString(2, s);
             ResultSet resultados = stmObterTrans.executeQuery();
             while (resultados.next()) {
                 RegistroTransacao c = new RegistroTransacao(resultados.getString("estado"),
                         resultados.getInt("ID"),
                         resultados.getBigDecimal("valor"),
-                        resultados.getString("data"),
+                        resultados.getString("datat"),
                         resultados.getString("acipiente"),
                         resultados.getString("solvente"),
                         resultados.getString("metodo"),
@@ -250,6 +252,7 @@ public class TransacaoRelacional {
                 RegistroTransacao.add(c);
             }
         } catch (SQLException ex) {
+            System.out.println("Erro aqui "+ ex.getMessage());
             throw new DaoException("Erro ao executar a consulta dos dados");
         }
         return RegistroTransacao;
