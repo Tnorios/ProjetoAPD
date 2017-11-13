@@ -7,6 +7,7 @@ package Controller.Interfaces;
 
 import Model.RegistroTransacao;
 import Model.Usuario;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ import Model.Usuario;
 public interface iController {
     RegistroTransacao processar(RegistroTransacao r);
     Usuario autenticar(String login, String senha);
+
+    List<RegistroTransacao> listar(String login, String senha);
 }

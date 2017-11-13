@@ -9,6 +9,10 @@ import Model.Interfaces.iDao;
 import Persistencia.Dao;
 import Persistencia.DaoException;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,7 +29,9 @@ public class Usuario {
     @JsonIgnore
     private iDao dao;
 
-
+    public Usuario(){
+        
+    }
     public String getLogin() {
         return login;
     }
@@ -89,6 +95,17 @@ public class Usuario {
         }else{
             this.nome="Erro!";
         }
+    }
+
+    public List<RegistroTransacao> listar() {
+        List<RegistroTransacao> tr = new ArrayList<>();
+        try {
+            tr= dao.buscarPorString(this.conta);//To change body of generated methods, choose Tools | Templates.
+        } catch (DaoException ex) {
+            Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMensagem());
+        }
+        return tr;
     }
     
 }

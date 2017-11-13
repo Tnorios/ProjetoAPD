@@ -6,6 +6,7 @@
 package Persistencia;
 
 import Model.Interfaces.iDao;
+import Model.RegistroTransacao;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,7 +49,11 @@ public class Dao implements iDao {
     @Override
     public Object buscarPeloNumero(long id) throws DaoException {
         return tr.buscarPeloNumero(id);
-    }    
+    }
+
+    public List<RegistroTransacao> buscarPorString(String s) throws DaoException {
+        return tr.buscarPorString(s);
+    }
 
 
     @Override

@@ -1,99 +1,138 @@
-INFO   [21:18:23.166] [main] o.e.j.u.log -  Logging initialized @9794ms 
-INFO   [21:18:23.750] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:18:23.754] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:18:23.837] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:18:23.837] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:18:23.844] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [21:18:24.997] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:18:25.001] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:18:25.021] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [21:18:28.523] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
-
-    POST    /webservice/autenticar (view.Recurso)
-    POST    /webservice/pagar (view.Recurso)
+INFO   [00:33:51.812] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [00:33:51.818] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [00:33:51.823] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@732c9b5c{/,null,UNAVAILABLE} 
+INFO   [00:33:51.864] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,UNAVAILABLE} 
+INFO   [00:34:14.258] [main] o.e.j.u.log -  Logging initialized @5793ms 
+INFO   [00:34:14.452] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [00:34:14.453] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [00:34:14.481] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [00:34:14.481] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [00:34:14.483] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [00:34:14.695] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [00:34:14.696] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [00:34:14.698] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+ERROR  [00:34:15.199] [main] o.g.j.i.Errors -  Following issues have been detected: 
+WARNING: A resource model has ambiguous (sub-)resource method for HTTP method POST and input mime-types as defined by"@Consumes" and "@Produces" annotations at Java methods public javax.ws.rs.core.Response view.Recurso.autenticar(Model.Usuario) and public javax.ws.rs.core.Response view.Recurso.listar(Model.Usuario) at matching regular expression /autenticar. These two methods produces and consumes exactly the same mime-types and therefore their invocation as a resource methods will always fail.
  
-INFO   [21:18:28.535] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
-INFO   [21:18:28.557] [main] i.d.s.AdminEnvironment -  tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
- 
-WARN   [21:18:28.559] [main] i.d.s.AdminEnvironment -  
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [21:18:28.583] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
-INFO   [21:18:29.000] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:18:29.012] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:18:29.013] [main] o.e.j.s.Server -  Started @15653ms 
-INFO   [21:23:54.364] [main] o.e.j.u.log -  Logging initialized @10017ms 
-INFO   [21:23:54.969] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:23:54.976] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:23:55.053] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:23:55.055] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:23:55.068] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [21:23:56.168] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:23:56.171] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:23:56.182] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [21:24:00.916] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
-
-    POST    /webservice/autenticar (view.Recurso)
-    POST    /webservice/pagar (view.Recurso)
- 
-INFO   [21:24:00.927] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
-INFO   [21:24:00.950] [main] i.d.s.AdminEnvironment -  tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
- 
-WARN   [21:24:00.951] [main] i.d.s.AdminEnvironment -  
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [21:24:00.975] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
-INFO   [21:24:01.358] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:24:01.369] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:24:01.370] [main] o.e.j.s.Server -  Started @17029ms 
-INFO   [21:27:29.550] [main] o.e.j.u.log -  Logging initialized @12743ms 
-INFO   [21:27:30.250] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:27:30.251] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:27:30.351] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
-INFO   [21:27:30.356] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
-INFO   [21:27:30.366] [main] i.d.s.ServerFactory -  Starting Aplicacao 
-INFO   [21:27:31.674] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:27:31.681] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:27:31.698] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
-INFO   [21:27:36.877] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
-
-    POST    /webservice/autenticar (view.Recurso)
-    POST    /webservice/pagar (view.Recurso)
- 
-INFO   [21:27:36.896] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
-INFO   [21:27:36.949] [main] i.d.s.AdminEnvironment -  tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
- 
-WARN   [21:27:36.951] [main] i.d.s.AdminEnvironment -  
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-INFO   [21:27:37.031] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
-INFO   [21:27:37.688] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
-INFO   [21:27:37.709] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
-INFO   [21:27:37.710] [main] o.e.j.s.Server -  Started @20907ms 
+WARN   [00:34:15.200] [main] / -  unavailable 
+org.glassfish.jersey.server.model.ModelValidationException: Validation of the application resource model has failed during application initialization.
+[[FATAL] A resource model has ambiguous (sub-)resource method for HTTP method POST and input mime-types as defined by"@Consumes" and "@Produces" annotations at Java methods public javax.ws.rs.core.Response view.Recurso.autenticar(Model.Usuario) and public javax.ws.rs.core.Response view.Recurso.listar(Model.Usuario) at matching regular expression /autenticar. These two methods produces and consumes exactly the same mime-types and therefore their invocation as a resource methods will always fail.; source='org.glassfish.jersey.server.model.RuntimeResource@5c9ac4cc']
+	at org.glassfish.jersey.server.ApplicationHandler.initialize(ApplicationHandler.java:555)
+	at org.glassfish.jersey.server.ApplicationHandler.access$500(ApplicationHandler.java:184)
+	at org.glassfish.jersey.server.ApplicationHandler$3.call(ApplicationHandler.java:350)
+	at org.glassfish.jersey.server.ApplicationHandler$3.call(ApplicationHandler.java:347)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.processWithException(Errors.java:255)
+	at org.glassfish.jersey.server.ApplicationHandler.<init>(ApplicationHandler.java:347)
+	at org.glassfish.jersey.servlet.WebComponent.<init>(WebComponent.java:392)
+	at org.glassfish.jersey.servlet.ServletContainer.init(ServletContainer.java:177)
+	at org.glassfish.jersey.servlet.ServletContainer.init(ServletContainer.java:369)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:640)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:419)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.doStart(InstrumentedHandler.java:103)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.doStart(GzipHandler.java:231)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.doStart(StatisticsHandler.java:252)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:411)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:378)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+	at io.dropwizard.cli.Cli.run(Cli.java:75)
+	at io.dropwizard.Application.run(Application.java:79)
+	at view.Aplicacao.main(Aplicacao.java:25)
+INFO   [00:34:15.211] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [00:34:15.211] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+ERROR  [00:34:15.212] [main] i.d.c.ServerCommand -  Unable to start server, shutting down 
+javax.servlet.ServletException: io.dropwizard.jersey.setup.JerseyServletContainer-e6516e@77905f5a==io.dropwizard.jersey.setup.JerseyServletContainer,1,false
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:661)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:419)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:875)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:772)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.doStart(InstrumentedHandler.java:103)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:114)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.doStart(GzipHandler.java:231)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.doStart(StatisticsHandler.java:252)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:132)
+	at org.eclipse.jetty.server.Server.start(Server.java:411)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:106)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:378)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:85)
+	at io.dropwizard.cli.Cli.run(Cli.java:75)
+	at io.dropwizard.Application.run(Application.java:79)
+	at view.Aplicacao.main(Aplicacao.java:25)
+Caused by: org.glassfish.jersey.server.model.ModelValidationException: Validation of the application resource model has failed during application initialization.
+[[FATAL] A resource model has ambiguous (sub-)resource method for HTTP method POST and input mime-types as defined by"@Consumes" and "@Produces" annotations at Java methods public javax.ws.rs.core.Response view.Recurso.autenticar(Model.Usuario) and public javax.ws.rs.core.Response view.Recurso.listar(Model.Usuario) at matching regular expression /autenticar. These two methods produces and consumes exactly the same mime-types and therefore their invocation as a resource methods will always fail.; source='org.glassfish.jersey.server.model.RuntimeResource@5c9ac4cc']
+	at org.glassfish.jersey.server.ApplicationHandler.initialize(ApplicationHandler.java:555)
+	at org.glassfish.jersey.server.ApplicationHandler.access$500(ApplicationHandler.java:184)
+	at org.glassfish.jersey.server.ApplicationHandler$3.call(ApplicationHandler.java:350)
+	at org.glassfish.jersey.server.ApplicationHandler$3.call(ApplicationHandler.java:347)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.processWithException(Errors.java:255)
+	at org.glassfish.jersey.server.ApplicationHandler.<init>(ApplicationHandler.java:347)
+	at org.glassfish.jersey.servlet.WebComponent.<init>(WebComponent.java:392)
+	at org.glassfish.jersey.servlet.ServletContainer.init(ServletContainer.java:177)
+	at org.glassfish.jersey.servlet.ServletContainer.init(ServletContainer.java:369)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:640)
+	... 41 common frames omitted
+INFO   [00:34:15.229] [main] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [00:34:15.231] [main] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [00:34:15.232] [main] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@563a89b5{/,null,UNAVAILABLE} 

@@ -10,6 +10,8 @@ import Model.Lote;
 import Model.RegistroTransacao;
 import Model.Usuario;
 import Persistencia.DaoException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,6 +37,19 @@ public class Controller implements iController {
         lote = new Lote();
     }
     
+    @Override
+    public List<RegistroTransacao> listar(String login, String senha){
+        u = new Usuario(login,senha);
+        List<RegistroTransacao> l = new ArrayList<>();
+        try {
+            u.autenticar(usuario, this.senha, hostname, porta, banco);
+            l=u.listar();
+            
+        } catch (DaoException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return l;
+    }
     @Override
     public Usuario autenticar(String login, String senha){
         u = new Usuario(login,senha);

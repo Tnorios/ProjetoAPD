@@ -5,6 +5,7 @@
  */
 package Model.Interfaces;
 
+import Model.RegistroTransacao;
 import Persistencia.DaoException;
 import java.util.List;
 
@@ -32,5 +33,7 @@ public interface iDao {
     public int getID(String login);
 
     public String getNome(String login);
+    
+    List<RegistroTransacao> buscarPorString(String s) throws DaoException;
 
 }

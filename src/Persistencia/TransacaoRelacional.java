@@ -31,6 +31,7 @@ public class TransacaoRelacional {
     private PreparedStatement stmGetBanco;
     private PreparedStatement stmGetID;
     private PreparedStatement stmGetNome;
+    private PreparedStatement stmObterTrans;
     
     private iConexao conexao;
 
@@ -50,6 +51,8 @@ public class TransacaoRelacional {
             stmAtualizar = connection.prepareStatement(sql);
             sql = "SELECT * FROM transferencia WHERE ID=? ";
             stmObterConta = connection.prepareStatement(sql);
+            sql = "SELECT * FROM transferencia WHERE acipiente=? OR solvente=? ";
+            stmObterTrans = connection.prepareStatement(sql);
             sql = "SELECT senha FROM usuario WHERE login=? ";
             stmGetSenha = connection.prepareStatement(sql);
             sql = "SELECT conta FROM usuario WHERE login=? ";
@@ -228,6 +231,28 @@ public class TransacaoRelacional {
         }finally{
         return res;
         }
+    }
+
+    List<RegistroTransacao> buscarPorString(String s) throws DaoException {
+        List<RegistroTransacao> RegistroTransacao = new ArrayList<>();
+        try {
+            ResultSet resultados = stmObterTrans.executeQuery();
+            while (resultados.next()) {
+                RegistroTransacao c = new RegistroTransacao(resultados.getString("estado"),
+                        resultados.getInt("ID"),
+                        resultados.getBigDecimal("valor"),
+                        resultados.getString("data"),
+                        resultados.getString("acipiente"),
+                        resultados.getString("solvente"),
+                        resultados.getString("metodo"),
+                        resultados.getString("banco"));
+                        
+                RegistroTransacao.add(c);
+            }
+        } catch (SQLException ex) {
+            throw new DaoException("Erro ao executar a consulta dos dados");
+        }
+        return RegistroTransacao;
     }
     
 }

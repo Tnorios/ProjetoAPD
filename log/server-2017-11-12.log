@@ -1,0 +1,646 @@
+INFO   [21:18:23.166] [main] o.e.j.u.log -  Logging initialized @9794ms 
+INFO   [21:18:23.750] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:18:23.754] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:18:23.837] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:18:23.837] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:18:23.844] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [21:18:24.997] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:18:25.001] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:18:25.021] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [21:18:28.523] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/autenticar (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [21:18:28.535] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
+INFO   [21:18:28.557] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [21:18:28.559] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [21:18:28.583] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
+INFO   [21:18:29.000] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:18:29.012] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:18:29.013] [main] o.e.j.s.Server -  Started @15653ms 
+INFO   [21:23:54.364] [main] o.e.j.u.log -  Logging initialized @10017ms 
+INFO   [21:23:54.969] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:23:54.976] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:23:55.053] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:23:55.055] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:23:55.068] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [21:23:56.168] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:23:56.171] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:23:56.182] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [21:24:00.916] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/autenticar (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [21:24:00.927] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
+INFO   [21:24:00.950] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [21:24:00.951] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [21:24:00.975] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
+INFO   [21:24:01.358] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:24:01.369] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:24:01.370] [main] o.e.j.s.Server -  Started @17029ms 
+INFO   [21:27:29.550] [main] o.e.j.u.log -  Logging initialized @12743ms 
+INFO   [21:27:30.250] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:27:30.251] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:27:30.351] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [21:27:30.356] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [21:27:30.366] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [21:27:31.674] [main] o.e.j.s.SetUIDListener -  Opened application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:27:31.681] [main] o.e.j.s.SetUIDListener -  Opened admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:27:31.698] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [21:27:36.877] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /webservice/autenticar (view.Recurso)
+    POST    /webservice/pagar (view.Recurso)
+ 
+INFO   [21:27:36.896] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5acc9fdf{/,null,AVAILABLE} 
+INFO   [21:27:36.949] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [21:27:36.951] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [21:27:37.031] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@2d23faef{/,null,AVAILABLE} 
+INFO   [21:27:37.688] [main] o.e.j.s.AbstractConnector -  Started application@4628b1d3{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [21:27:37.709] [main] o.e.j.s.AbstractConnector -  Started admin@77cf3f8b{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [21:27:37.710] [main] o.e.j.s.Server -  Started @20907ms 
+INFO   [22:18:57.323] [main] o.e.j.u.log -  Logging initialized @5492ms 
+INFO   [22:18:57.450] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:18:57.450] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:18:57.468] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:18:57.469] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:18:57.471] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [22:18:57.778] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:18:57.778] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:18:57.784] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [22:18:58.718] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /ibanking/autenticar (view.Recurso)
+    POST    /ibanking/pagar (view.Recurso)
+ 
+INFO   [22:18:58.724] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@6dd82486{/,null,AVAILABLE} 
+INFO   [22:18:58.732] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [22:18:58.732] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [22:18:58.739] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@86733{/,null,AVAILABLE} 
+INFO   [22:18:58.753] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:18:58.754] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:18:58.754] [main] o.e.j.s.Server -  Started @6925ms 
+ERROR  [22:19:20.054] [dw-18 - POST /ibanking/autenticar] C.Controller -  null 
+Persistencia.DaoException: null
+	at Persistencia.TransacaoRelacional.<init>(TransacaoRelacional.java:66)
+	at Persistencia.Dao.<init>(Dao.java:21)
+	at Model.Usuario.autenticar(Usuario.java:83)
+	at Controller.Controller.autenticar(Controller.java:42)
+	at view.Recurso.autenticar(Recurso.java:37)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [22:19:20.057] [dw-18 - POST /ibanking/autenticar] i.d.j.e.LoggingExceptionMapper -  Error handling a request: b89af1aff57b9389 
+java.lang.NullPointerException: null
+	at view.Recurso.autenticar(Recurso.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [22:21:29.482] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:21:29.491] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:21:29.493] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@86733{/,null,UNAVAILABLE} 
+INFO   [22:21:29.510] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@6dd82486{/,null,UNAVAILABLE} 
+INFO   [22:21:40.889] [main] o.e.j.u.log -  Logging initialized @5481ms 
+INFO   [22:21:41.003] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:21:41.004] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:21:41.018] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:21:41.018] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:21:41.020] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [22:21:41.232] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:21:41.233] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:21:41.235] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [22:21:41.877] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /ibanking/autenticar (view.Recurso)
+    POST    /ibanking/pagar (view.Recurso)
+ 
+INFO   [22:21:41.880] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@6dd82486{/,null,AVAILABLE} 
+INFO   [22:21:41.888] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [22:21:41.888] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [22:21:41.895] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@86733{/,null,AVAILABLE} 
+INFO   [22:21:41.910] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:21:41.915] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:21:41.916] [main] o.e.j.s.Server -  Started @6508ms 
+INFO   [22:42:15.787] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:42:15.792] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:42:15.795] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@86733{/,null,UNAVAILABLE} 
+INFO   [22:42:15.821] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@6dd82486{/,null,UNAVAILABLE} 
+INFO   [22:42:25.673] [main] o.e.j.u.log -  Logging initialized @4252ms 
+INFO   [22:42:25.851] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:42:25.852] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:42:25.886] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:42:25.886] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:42:25.887] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [22:42:26.337] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:42:26.338] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:42:26.350] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [22:42:27.445] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /ibanking/autenticar (view.Recurso)
+    POST    /ibanking/pagar (view.Recurso)
+ 
+INFO   [22:42:27.449] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,AVAILABLE} 
+INFO   [22:42:27.458] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [22:42:27.459] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [22:42:27.467] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@732c9b5c{/,null,AVAILABLE} 
+INFO   [22:42:27.481] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:42:27.483] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:42:27.485] [main] o.e.j.s.Server -  Started @6066ms 
+INFO   [22:45:50.472] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:45:50.481] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:45:50.483] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@732c9b5c{/,null,UNAVAILABLE} 
+INFO   [22:45:50.512] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,UNAVAILABLE} 
+INFO   [22:46:13.833] [main] o.e.j.u.log -  Logging initialized @5215ms 
+INFO   [22:46:14.070] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:46:14.070] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:46:14.079] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:46:14.079] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:46:14.080] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [22:46:14.277] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:46:14.277] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:46:14.279] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [22:46:15.225] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /ibanking/autenticar (view.Recurso)
+    POST    /ibanking/pagar (view.Recurso)
+ 
+INFO   [22:46:15.228] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,AVAILABLE} 
+INFO   [22:46:15.235] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [22:46:15.236] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [22:46:15.244] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@732c9b5c{/,null,AVAILABLE} 
+INFO   [22:46:15.261] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:46:15.264] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:46:15.266] [main] o.e.j.s.Server -  Started @6650ms 
+ERROR  [22:50:04.238] [dw-19 - POST /ibanking/autenticar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.Usuario]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@1360b5e0; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [22:51:51.134] [dw-14 - POST /ibanking/autenticar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.Usuario]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@44cd6785; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+ERROR  [22:54:39.825] [dw-14 - POST /ibanking/autenticar] i.d.j.j.JsonProcessingExceptionMapper -  Unable to serialize or deserialize the specific type 
+com.fasterxml.jackson.databind.JsonMappingException: No suitable constructor found for type [simple type, class Model.Usuario]: can not instantiate from JSON object (missing default constructor or creator, or perhaps need to add/enable type information?)
+ at [Source: org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream@1cfe178; line: 1, column: 2]
+	at com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:256)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1130)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserializeFromObject(SuperSonicBeanDeserializer.java:236)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.module.afterburner.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:117)
+	at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:1536)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:944)
+	at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:811)
+	at io.dropwizard.jersey.jackson.JacksonMessageBodyProvider.readFrom(JacksonMessageBodyProvider.java:54)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:256)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:235)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:74)
+	at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:155)
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1085)
+	at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:874)
+	at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:271)
+	at org.glassfish.jersey.server.internal.inject.EntityParamValueFactoryProvider$EntityValueFactory.provide(EntityParamValueFactoryProvider.java:96)
+	at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.provide(ParamValueFactoryWithSource.java:71)
+	at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:94)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:127)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+	at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:34)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:50)
+	at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:44)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:308)
+	at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:262)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1174)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1106)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+	at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51)
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+	at io.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:68)
+	at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:56)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:524)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:319)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:253)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
+INFO   [22:56:25.160] [Thread-11] o.e.j.s.AbstractConnector -  Stopped application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:56:25.162] [Thread-11] o.e.j.s.AbstractConnector -  Stopped admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:56:25.164] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@732c9b5c{/,null,UNAVAILABLE} 
+INFO   [22:56:25.180] [Thread-11] o.e.j.s.h.ContextHandler -  Stopped i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,UNAVAILABLE} 
+INFO   [22:56:53.653] [main] o.e.j.u.log -  Logging initialized @4074ms 
+INFO   [22:56:54.014] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:56:54.014] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:56:54.039] [main] i.d.s.DefaultServerFactory -  Registering jersey handler with root path prefix: / 
+INFO   [22:56:54.039] [main] i.d.s.DefaultServerFactory -  Registering admin handler with root path prefix: / 
+INFO   [22:56:54.040] [main] i.d.s.ServerFactory -  Starting Aplicacao 
+INFO   [22:56:54.657] [main] o.e.j.s.SetUIDListener -  Opened application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:56:54.658] [main] o.e.j.s.SetUIDListener -  Opened admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:56:54.663] [main] o.e.j.s.Server -  jetty-9.3.9.v20160517 
+INFO   [22:56:55.625] [main] i.d.j.DropwizardResourceConfig -  The following paths were found for the configured resources:
+
+    POST    /ibanking/autenticar (view.Recurso)
+    POST    /ibanking/pagar (view.Recurso)
+ 
+INFO   [22:56:55.629] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@5d5b5fa7{/,null,AVAILABLE} 
+INFO   [22:56:55.644] [main] i.d.s.AdminEnvironment -  tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+ 
+WARN   [22:56:55.645] [main] i.d.s.AdminEnvironment -  
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+INFO   [22:56:55.652] [main] o.e.j.s.h.ContextHandler -  Started i.d.j.MutableServletContextHandler@732c9b5c{/,null,AVAILABLE} 
+INFO   [22:56:55.667] [main] o.e.j.s.AbstractConnector -  Started application@5400db36{HTTP/1.1,[http/1.1]}{0.0.0.0:7000} 
+INFO   [22:56:55.669] [main] o.e.j.s.AbstractConnector -  Started admin@76b74e9c{HTTP/1.1,[http/1.1]}{0.0.0.0:7001} 
+INFO   [22:56:55.671] [main] o.e.j.s.Server -  Started @6120ms 
